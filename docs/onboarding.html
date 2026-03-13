@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Kronara — Let's Get You Set Up</title>
+  <meta name="description" content="Complete your Kronara setup by telling us about your studio.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kronara: {
+              purple: '#6C5CE7',
+              'purple-light': '#8B7CF0',
+              'purple-dark': '#5A4BD6',
+              orange: '#E8832A',
+              'orange-light': '#F09A4A',
+              'orange-dark': '#D06F1A',
+              navy: '#0A0A1A',
+              'navy-light': '#141428',
+              'navy-card': '#1a1a32',
+              'navy-border': '#252540',
+              teal: '#7ac4a0',
+              muted: '#8a8ea0',
+              'text-primary': '#e8eaf0',
+              'text-secondary': '#b0b4c4',
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #6C5CE7, #E8832A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glow-purple { box-shadow: 0 0 40px rgba(108, 92, 231, 0.3); }
+  </style>
+</head>
+<body class="bg-kronara-navy text-kronara-text-primary min-h-screen">
+
+  <!-- Header -->
+  <nav class="fixed top-0 w-full z-40 bg-kronara-navy/90 backdrop-blur-md border-b border-kronara-navy-border">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center">
+      <a href="/" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="Kronara" class="h-8 w-8">
+        <span class="text-xl font-bold text-white tracking-tight">Kronara</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-32 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Success Message (hidden by default, shown after submit) -->
+      <div id="success-message" class="hidden text-center">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-kronara-teal/20 flex items-center justify-center">
+          <svg class="w-10 h-10 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h1 class="text-4xl font-bold text-white mb-4 font-display">You're All Set!</h1>
+        <p class="text-kronara-text-secondary text-lg mb-8">
+          Thank you for choosing Kronara. We've received your details and will have your studio set up within 24 hours. Keep an eye on your inbox for next steps.
+        </p>
+        <a href="/" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold hover:opacity-90 transition-opacity">
+          Back to Kronara
+        </a>
+      </div>
+
+      <!-- Form -->
+      <div id="form-container">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 font-display">Welcome to <span class="gradient-text">Kronara</span></h1>
+          <p class="text-kronara-text-secondary text-lg">
+            Payment received! Tell us about your studio so we can get everything set up for you.
+          </p>
+        </div>
+
+        <form id="onboarding-form" class="space-y-6">
+
+          <!-- Business Name -->
+          <div>
+            <label for="business-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Business / Studio Name <span class="text-kronara-orange">*</span></label>
+            <input type="text" id="business-name" name="businessName" required
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              placeholder="e.g. Aradia Fitness">
+          </div>
+
+          <!-- Owner Name -->
+          <div>
+            <label for="owner-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Owner / Contact Name <span class="text-kronara-orange">*</span></label>
+            <input type="text" id="owner-name" name="ownerName" required
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              placeholder="e.g. Jud Beeby">
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-kronara-text-secondary mb-2">Email <span class="text-kronara-orange">*</span></label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              placeholder="you@yourstudio.com">
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block text-sm font-medium text-kronara-text-secondary mb-2">Phone</label>
+            <input type="tel" id="phone" name="phone"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              placeholder="+1 (555) 000-0000">
+          </div>
+
+          <!-- Two columns -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Number of Staff -->
+            <div>
+              <label for="num-staff" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Staff <span class="text-kronara-orange">*</span></label>
+              <input type="number" id="num-staff" name="numStaff" required min="1"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                placeholder="e.g. 8">
+            </div>
+
+            <!-- Number of Locations -->
+            <div>
+              <label for="num-locations" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Locations <span class="text-kronara-orange">*</span></label>
+              <input type="number" id="num-locations" name="numLocations" required min="1"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                placeholder="e.g. 1">
+            </div>
+          </div>
+
+          <!-- Number of Admin Staff to Train -->
+          <div>
+            <label for="num-admins" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Admin Staff to Train <span class="text-kronara-orange">*</span></label>
+            <input type="number" id="num-admins" name="numAdmins" required min="1"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              placeholder="e.g. 2">
+          </div>
+
+          <!-- Special Requests -->
+          <div>
+            <label for="special-requests" class="block text-sm font-medium text-kronara-text-secondary mb-2">Special Requests</label>
+            <textarea id="special-requests" name="specialRequests" rows="4"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors resize-none"
+              placeholder="Any specific requirements, integrations, or things we should know..."></textarea>
+          </div>
+
+          <!-- Error message -->
+          <div id="form-error" class="hidden text-red-400 text-sm text-center"></div>
+
+          <!-- Submit -->
+          <button type="submit" id="submit-btn"
+            class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold text-lg hover:opacity-90 transition-opacity glow-purple">
+            Submit & Get Started
+          </button>
+
+          <p class="text-center text-kronara-muted text-xs mt-4">
+            We'll have your studio set up within 24 hours and reach out with next steps.
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('onboarding-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      const data = {
+        businessName: form.businessName.value.trim(),
+        ownerName: form.ownerName.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        numStaff: form.numStaff.value,
+        numLocations: form.numLocations.value,
+        numAdmins: form.numAdmins.value,
+        specialRequests: form.specialRequests.value.trim(),
+      };
+
+      try {
+        const res = await fetch('https://app.kronara.app/api/onboarding', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) throw new Error('Submission failed');
+
+        document.getElementById('form-container').classList.add('hidden');
+        document.getElementById('success-message').classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        formError.textContent = 'Something went wrong. Please email admin@kronara.app directly and we\'ll get you sorted.';
+        formError.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit & Get Started';
+      }
+    });
+  </script>
+</body>
+</html>
