@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kronara — Studio Management Platform</title>
+  <meta name="description" content="Kronara is the all-in-one studio management platform for tracking hours, commissions, payroll, and more. Built for fitness studios, creative spaces, and service businesses.">
+  <meta name="keywords" content="studio management, timesheet tracking, payroll, commission tracking, fitness studio software">
+  <meta property="og:title" content="Kronara — Studio Management Platform">
+  <meta property="og:description" content="Track hours, commissions, and payroll in one beautiful platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kronara.com">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kronara: {
+              purple: '#6C5CE7',
+              'purple-light': '#8B7CF0',
+              'purple-dark': '#5A4BD6',
+              orange: '#E8832A',
+              'orange-light': '#F09A4A',
+              'orange-dark': '#D06F1A',
+              navy: '#0A0A1A',
+              'navy-light': '#141428',
+              'navy-card': '#1a1a32',
+              'navy-border': '#252540',
+              teal: '#7ac4a0',
+              muted: '#8a8ea0',
+              'text-primary': '#e8eaf0',
+              'text-secondary': '#b0b4c4',
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #6C5CE7, #E8832A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glow effects */
+    .glow-purple { box-shadow: 0 0 40px rgba(108, 92, 231, 0.3); }
+    .glow-orange { box-shadow: 0 0 40px rgba(232, 131, 42, 0.3); }
+
+    /* Animated gradient border */
+    .gradient-border {
+      position: relative;
+      background: #141428;
+      border-radius: 1rem;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, #6C5CE7, #E8832A);
+      z-index: -1;
+    }
+
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-delay { animation: float 6s ease-in-out 2s infinite; }
+
+    /* Fade in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Pulse glow */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(108, 92, 231, 0.4); }
+      50% { box-shadow: 0 0 40px rgba(108, 92, 231, 0.7); }
+    }
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+    /* Screenshot placeholder */
+    .screenshot-placeholder {
+      background: linear-gradient(135deg, #141428 0%, #1a1a32 100%);
+      border: 2px dashed #252540;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+
+    /* Video placeholder */
+    .video-placeholder {
+      background: linear-gradient(135deg, #141428 0%, #1a1a32 100%);
+      border: 2px dashed #252540;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-placeholder .play-btn {
+      width: 80px;
+      height: 80px;
+      background: rgba(108, 92, 231, 0.3);
+      border: 2px solid #6C5CE7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .video-placeholder:hover .play-btn {
+      background: rgba(108, 92, 231, 0.5);
+      transform: scale(1.1);
+    }
+
+    /* Pricing popular badge */
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #6C5CE7, #E8832A);
+      padding: 4px 20px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: white;
+    }
+
+    /* Nav blur */
+    .nav-blur {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Smooth hover on cards */
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Hero background pattern */
+    .hero-bg {
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(232, 131, 42, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(108, 92, 231, 0.1) 0%, transparent 40%);
+    }
+
+    /* Grid pattern overlay */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0A0A1A; }
+    ::-webkit-scrollbar-thumb { background: #252540; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6C5CE7; }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="bg-kronara-navy text-kronara-text-primary">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-kronara-navy/80 border-b border-kronara-navy-border/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="Kronara" class="h-8 md:h-10 w-auto">
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Features</a>
+          <a href="#screenshots" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Screenshots</a>
+          <a href="#videos" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Videos</a>
+          <a href="#pricing" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Pricing</a>
+          <a href="#faq" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">FAQ</a>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#demo" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-purple text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all">
+            Try Demo
+          </a>
+          <a href="#pricing" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-kronara-text-secondary hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-kronara-navy-light border-l border-kronara-navy-border md:hidden z-50">
+      <div class="p-6">
+        <button id="mobile-menu-close" class="mb-8 p-2 text-kronara-text-secondary hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <div class="flex flex-col gap-4">
+          <a href="#features" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Features</a>
+          <a href="#screenshots" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Screenshots</a>
+          <a href="#videos" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Videos</a>
+          <a href="#pricing" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Pricing</a>
+          <a href="#faq" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">FAQ</a>
+          <hr class="border-kronara-navy-border my-2">
+          <a href="#demo" class="text-center px-5 py-3 rounded-lg border border-kronara-purple text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all mobile-link">
+            Try Demo
+          </a>
+          <a href="#pricing" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold mobile-link">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg grid-pattern min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <!-- Decorative orbs -->
+    <div class="absolute top-1/4 left-10 w-72 h-72 bg-kronara-purple/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-kronara-orange/10 rounded-full blur-3xl animate-float-delay"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-kronara-navy-card border border-kronara-navy-border rounded-full px-4 py-2 mb-8">
+            <span class="w-2 h-2 bg-kronara-teal rounded-full animate-pulse"></span>
+            <span class="text-xs text-kronara-text-secondary tracking-wide uppercase">Now Available</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+            <span class="text-white">Manage Your</span><br>
+            <span class="gradient-text font-display">Studio Smarter</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-kronara-text-secondary max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+            Track hours, commissions, and payroll in one beautiful platform.
+            Built for fitness studios, creative spaces, and service businesses.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <a href="#demo" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
+              Try Live Demo
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="#features" class="px-8 py-4 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Learn More
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-kronara-muted">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-kronara-teal" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>No credit card required</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-kronara-teal" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Install as a phone app</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-kronara-teal" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Setup in minutes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Hero Image/App Preview -->
+        <div class="relative">
+          <div class="screenshot-placeholder aspect-[4/3] w-full max-w-lg mx-auto glow-purple rounded-2xl">
+            <div class="text-center p-8">
+              <svg class="w-16 h-16 mx-auto mb-4 text-kronara-purple/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-kronara-muted text-sm">App Dashboard Preview</p>
+              <p class="text-kronara-muted/50 text-xs mt-1">Replace with screenshot: assets/screenshots/hero-dashboard.png</p>
+            </div>
+          </div>
+          <!-- Floating accent cards -->
+          <div class="absolute -top-4 -right-4 bg-kronara-navy-card border border-kronara-navy-border rounded-xl p-4 animate-float hidden lg:block">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-kronara-teal/20 flex items-center justify-center">
+                <svg class="w-5 h-5 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-kronara-muted">Hours Tracked</p>
+                <p class="text-lg font-bold text-white">1,247</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-kronara-navy-card border border-kronara-navy-border rounded-xl p-4 animate-float-delay hidden lg:block">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-kronara-orange/20 flex items-center justify-center">
+                <svg class="w-5 h-5 text-kronara-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-kronara-muted">Payroll Sent</p>
+                <p class="text-lg font-bold text-white">$42.8k</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos / Social Proof Bar -->
+  <section class="border-y border-kronara-navy-border bg-kronara-navy-light/50 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm text-kronara-muted mb-6 uppercase tracking-widest">Trusted by studios worldwide</p>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-40">
+        <span class="text-xl font-display text-kronara-text-secondary">Studio One</span>
+        <span class="text-xl font-display text-kronara-text-secondary">FlexFit</span>
+        <span class="text-xl font-display text-kronara-text-secondary">PoleArts</span>
+        <span class="text-xl font-display text-kronara-text-secondary">YogaFlow</span>
+        <span class="text-xl font-display text-kronara-text-secondary">DanceHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-purple text-sm font-semibold uppercase tracking-widest mb-4">Features</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Everything you need to<br>
+          <span class="gradient-text font-display">run your studio</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
+          From timesheet logging to payroll processing, Kronara handles the operational complexity so you can focus on what matters.
+        </p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1: Timesheet Tracking -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-purple/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Timesheet Tracking</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Staff log hours with date, location, time, class name, hours worked, and pay rate. Support for multiple shifts per day with an intuitive calendar view.
+          </p>
+        </div>
+
+        <!-- Feature 2: Commission Logging -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-orange/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Commission Tracking</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Track retail sales, tips, and other commissions separately from regular hours. Everything rolls into payroll automatically.
+          </p>
+        </div>
+
+        <!-- Feature 3: Smart Bonuses -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-teal/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Smart Bonus System</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Automatic bonus calculations based on weekly hours worked and class attendance thresholds. Configurable per-bonus exclusion lists.
+          </p>
+        </div>
+
+        <!-- Feature 4: Payroll Processing -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-purple/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Payroll & Reports</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Generate PDF payroll reports, export CSV data, and auto-send reports via email. Supports weekly, biweekly, semi-monthly, and monthly pay periods.
+          </p>
+        </div>
+
+        <!-- Feature 5: Google Calendar -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-orange/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Google Calendar Sync</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Import shifts directly from Google Calendar. Staff can sync their schedules automatically, reducing manual data entry.
+          </p>
+        </div>
+
+        <!-- Feature 6: Flag System -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-teal/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Entry Flag System</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Admins flag entries for review; staff respond with corrections. A transparent audit trail keeps everyone accountable and aligned.
+          </p>
+        </div>
+
+        <!-- Feature 7: Push Notifications -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-purple/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Push Notifications</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Configurable notifications by category: flags, pay reports, shift reminders. Keep your team in the loop without email overload.
+          </p>
+        </div>
+
+        <!-- Feature 8: PWA -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-orange/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Install as Phone App</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Kronara is a Progressive Web App. Install it on any phone or tablet — no app store needed. Works offline too.
+          </p>
+        </div>
+
+        <!-- Feature 9: Support & Chat -->
+        <div class="feature-card bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in">
+          <div class="w-12 h-12 rounded-xl bg-kronara-teal/15 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-3">Built-in Support Chat</h3>
+          <p class="text-kronara-text-secondary leading-relaxed">
+            Staff can message support or report bugs directly from the app. Admins track issues and notify on fixes. AI chat assistant included.
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional features list -->
+      <div class="mt-16 bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 md:p-12 fade-in">
+        <h3 class="text-2xl font-bold text-white mb-8 text-center">And so much more...</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Late submission tracking</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Duplicate entry detection</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Multi-location support</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Contractor & GST tracking</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Invoice generation</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Undo with 6s toast</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Pay history & earnings</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">PIN-based auth + recovery</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Custom themes & branding</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Auto-send payroll reports</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">CSV data exports</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-kronara-text-secondary">Bug reporting system</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Section -->
+  <section id="screenshots" class="py-24 md:py-32 bg-kronara-navy-light/30 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-orange text-sm font-semibold uppercase tracking-widest mb-4">Screenshots</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          See Kronara <span class="gradient-text font-display">in action</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
+          A beautifully designed interface that your team will actually enjoy using.
+        </p>
+      </div>
+
+      <!-- Screenshot Grid -->
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <!-- Screenshot 1 -->
+        <div class="fade-in">
+          <div class="screenshot-placeholder aspect-video w-full rounded-2xl glow-purple">
+            <div class="text-center p-8">
+              <svg class="w-12 h-12 mx-auto mb-3 text-kronara-purple/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-kronara-muted font-medium">Staff Dashboard</p>
+              <p class="text-kronara-muted/50 text-xs mt-1">assets/screenshots/staff-dashboard.png</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-4">Staff can log hours, view their calendar, and track earnings at a glance.</p>
+        </div>
+
+        <!-- Screenshot 2 -->
+        <div class="fade-in">
+          <div class="screenshot-placeholder aspect-video w-full rounded-2xl glow-orange">
+            <div class="text-center p-8">
+              <svg class="w-12 h-12 mx-auto mb-3 text-kronara-orange/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-kronara-muted font-medium">Admin Payroll View</p>
+              <p class="text-kronara-muted/50 text-xs mt-1">assets/screenshots/admin-payroll.png</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-4">Admins review all staff entries, process payroll, and send PDF reports.</p>
+        </div>
+
+        <!-- Screenshot 3 -->
+        <div class="fade-in">
+          <div class="screenshot-placeholder aspect-video w-full rounded-2xl">
+            <div class="text-center p-8">
+              <svg class="w-12 h-12 mx-auto mb-3 text-kronara-teal/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-kronara-muted font-medium">Calendar & Entries</p>
+              <p class="text-kronara-muted/50 text-xs mt-1">assets/screenshots/calendar-entries.png</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-4">Visual calendar with entry counts, shift details, and quick-add functionality.</p>
+        </div>
+
+        <!-- Screenshot 4 -->
+        <div class="fade-in">
+          <div class="screenshot-placeholder aspect-video w-full rounded-2xl">
+            <div class="text-center p-8">
+              <svg class="w-12 h-12 mx-auto mb-3 text-kronara-purple/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <p class="text-kronara-muted font-medium">Mobile PWA View</p>
+              <p class="text-kronara-muted/50 text-xs mt-1">assets/screenshots/mobile-pwa.png</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-4">Install on any phone as a native-feeling app. Works on iOS and Android.</p>
+        </div>
+      </div>
+
+      <!-- Full-width screenshot -->
+      <div class="fade-in">
+        <div class="screenshot-placeholder aspect-[21/9] w-full rounded-2xl glow-purple">
+          <div class="text-center p-8">
+            <svg class="w-16 h-16 mx-auto mb-3 text-kronara-purple/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <p class="text-kronara-muted font-medium text-lg">Full Admin Dashboard Overview</p>
+            <p class="text-kronara-muted/50 text-xs mt-1">assets/screenshots/full-admin-overview.png</p>
+          </div>
+        </div>
+        <p class="text-center text-sm text-kronara-text-secondary mt-4">Complete admin dashboard: staff management, payroll processing, flags, and settings all in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section id="videos" class="py-24 md:py-32 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-teal text-sm font-semibold uppercase tracking-widest mb-4">Videos</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Watch how it <span class="gradient-text font-display">works</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
+          Quick video walkthroughs of Kronara's key features.
+        </p>
+      </div>
+
+      <!-- Main video -->
+      <div class="mb-12 fade-in">
+        <div class="video-placeholder aspect-video w-full max-w-4xl mx-auto rounded-2xl glow-purple">
+          <div class="play-btn mb-4">
+            <svg class="w-8 h-8 text-kronara-purple ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <p class="text-kronara-muted font-medium text-lg">Product Overview</p>
+          <p class="text-kronara-muted/50 text-sm mt-2">A complete walkthrough of Kronara's features</p>
+          <p class="text-kronara-muted/30 text-xs mt-4">Replace with video embed or link to: assets/videos/product-overview.mp4</p>
+        </div>
+      </div>
+
+      <!-- Video grid -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Video 1 -->
+        <div class="fade-in">
+          <div class="video-placeholder aspect-video w-full rounded-2xl">
+            <div class="play-btn mb-3">
+              <svg class="w-6 h-6 text-kronara-purple ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <p class="text-kronara-muted font-medium">Getting Started</p>
+            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/getting-started.mp4</p>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-3">Set up your studio in under 5 minutes</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="fade-in">
+          <div class="video-placeholder aspect-video w-full rounded-2xl">
+            <div class="play-btn mb-3">
+              <svg class="w-6 h-6 text-kronara-orange ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <p class="text-kronara-muted font-medium">Staff Workflow</p>
+            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/staff-workflow.mp4</p>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-3">How staff log hours and commissions</p>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="fade-in">
+          <div class="video-placeholder aspect-video w-full rounded-2xl">
+            <div class="play-btn mb-3">
+              <svg class="w-6 h-6 text-kronara-teal ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <p class="text-kronara-muted font-medium">Admin Payroll</p>
+            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/admin-payroll.mp4</p>
+          </div>
+          <p class="text-center text-sm text-kronara-text-secondary mt-3">Processing payroll and generating reports</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-24 md:py-32 bg-kronara-navy-light/30 border-y border-kronara-navy-border relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-purple text-sm font-semibold uppercase tracking-widest mb-4">How It Works</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Up and running in <span class="gradient-text font-display">three steps</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-purple to-kronara-purple-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">1</div>
+          <h3 class="text-xl font-semibold text-white mb-3">We Set You Up</h3>
+          <p class="text-kronara-text-secondary">We deploy your own Kronara instance, configure your locations, pay periods, and bonus rules. Custom branding included.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-purple to-kronara-orange flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">2</div>
+          <h3 class="text-xl font-semibold text-white mb-3">Add Your Team</h3>
+          <p class="text-kronara-text-secondary">Invite staff members with PIN-based login. They install the app on their phones and start logging immediately.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-orange to-kronara-orange-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">3</div>
+          <h3 class="text-xl font-semibold text-white mb-3">Run Payroll</h3>
+          <p class="text-kronara-text-secondary">Review entries, process payroll with one click, and send professional PDF reports via email automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section id="demo" class="py-24 md:py-32 relative overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute inset-0 hero-bg"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-kronara-orange text-sm font-semibold uppercase tracking-widest mb-4">Live Demo</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Try it <span class="gradient-text font-display">right now</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
+          No signup needed. Jump into a live demo as either a staff member or an admin to see exactly how Kronara works.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Staff Demo -->
+        <div class="gradient-border p-8 text-center fade-in group hover:scale-[1.02] transition-transform">
+          <div class="w-20 h-20 rounded-2xl bg-kronara-purple/15 flex items-center justify-center mx-auto mb-6 group-hover:bg-kronara-purple/25 transition-colors">
+            <svg class="w-10 h-10 text-kronara-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-3">Staff Demo</h3>
+          <p class="text-kronara-text-secondary mb-8">
+            Experience Kronara as a staff member. Log hours, track commissions, view your pay history, and more.
+          </p>
+          <a href="#" id="demo-staff-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-purple text-white font-semibold text-lg hover:bg-kronara-purple-light transition-colors pulse-glow">
+            Launch Staff Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Admin Demo -->
+        <div class="gradient-border p-8 text-center fade-in group hover:scale-[1.02] transition-transform">
+          <div class="w-20 h-20 rounded-2xl bg-kronara-orange/15 flex items-center justify-center mx-auto mb-6 group-hover:bg-kronara-orange/25 transition-colors">
+            <svg class="w-10 h-10 text-kronara-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-3">Admin Demo</h3>
+          <p class="text-kronara-text-secondary mb-8">
+            See the full admin experience. Manage staff, process payroll, review flags, and configure your studio.
+          </p>
+          <a href="#" id="demo-admin-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-orange text-white font-semibold text-lg hover:bg-kronara-orange-light transition-colors glow-orange">
+            Launch Admin Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-kronara-muted mt-8">
+        Demo uses sample data. Your entries are reset periodically. No personal data is collected.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-24 md:py-32 bg-kronara-navy-light/30 border-t border-kronara-navy-border relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-purple text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Simple, transparent <span class="gradient-text font-display">pricing</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
+          Choose the plan that fits your studio. All plans include a one-time setup fee that covers deployment, configuration, custom branding, and onboarding support.
+        </p>
+      </div>
+
+      <!-- Pricing Toggle (Monthly/Annual) -->
+      <div class="flex items-center justify-center gap-4 mb-16 fade-in">
+        <span id="monthly-label" class="text-white font-medium">Monthly</span>
+        <button id="pricing-toggle" class="relative w-14 h-7 bg-kronara-navy-card border border-kronara-navy-border rounded-full transition-colors" data-annual="false">
+          <span id="toggle-dot" class="absolute top-0.5 left-0.5 w-6 h-6 bg-kronara-purple rounded-full transition-transform"></span>
+        </button>
+        <span id="annual-label" class="text-kronara-muted font-medium">Annual <span class="text-kronara-teal text-xs font-semibold ml-1">Save 20%</span></span>
+      </div>
+
+      <!-- Pricing Grid -->
+      <div class="grid lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+        <!-- Starter -->
+        <div class="bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in feature-card flex flex-col">
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-kronara-text-secondary mb-2">Starter</h3>
+            <p class="text-sm text-kronara-muted mb-6">For small studios just getting started</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-white pricing-monthly">$29</span>
+              <span class="text-4xl font-bold text-white pricing-annual hidden">$23</span>
+              <span class="text-kronara-muted">/month</span>
+            </div>
+            <p class="text-sm text-kronara-muted mt-2">Up to <strong class="text-white">5 staff</strong></p>
+          </div>
+          <div class="border-t border-kronara-navy-border pt-6 mb-8">
+            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
+            <p class="text-2xl font-bold text-white">$199</p>
+            <p class="text-xs text-kronara-muted mt-1">Deployment, config & onboarding</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              All core features
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Email payroll reports
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              PWA install
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              1 location
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Email support
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center px-6 py-3 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all font-medium">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Growth (Popular) -->
+        <div class="bg-kronara-navy-light border-2 border-kronara-purple rounded-2xl p-8 fade-in feature-card flex flex-col relative">
+          <div class="popular-badge">Most Popular</div>
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-kronara-purple mb-2">Growth</h3>
+            <p class="text-sm text-kronara-muted mb-6">For growing studios with larger teams</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-white pricing-monthly">$59</span>
+              <span class="text-4xl font-bold text-white pricing-annual hidden">$47</span>
+              <span class="text-kronara-muted">/month</span>
+            </div>
+            <p class="text-sm text-kronara-muted mt-2">Up to <strong class="text-white">15 staff</strong></p>
+          </div>
+          <div class="border-t border-kronara-navy-border pt-6 mb-8">
+            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
+            <p class="text-2xl font-bold text-white">$399</p>
+            <p class="text-xs text-kronara-muted mt-1">Deployment, config, branding & training</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Everything in Starter
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Google Calendar sync
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Push notifications
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Up to 3 locations
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Custom branding
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Priority email support
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold hover:opacity-90 transition-opacity">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Professional -->
+        <div class="bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in feature-card flex flex-col">
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-kronara-orange mb-2">Professional</h3>
+            <p class="text-sm text-kronara-muted mb-6">For established studios and multi-location ops</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-white pricing-monthly">$99</span>
+              <span class="text-4xl font-bold text-white pricing-annual hidden">$79</span>
+              <span class="text-kronara-muted">/month</span>
+            </div>
+            <p class="text-sm text-kronara-muted mt-2">Up to <strong class="text-white">30 staff</strong></p>
+          </div>
+          <div class="border-t border-kronara-navy-border pt-6 mb-8">
+            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
+            <p class="text-2xl font-bold text-white">$599</p>
+            <p class="text-xs text-kronara-muted mt-1">Full setup, training & data migration</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Everything in Growth
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Contractor & GST tracking
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Invoice generation
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Unlimited locations
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Data migration support
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Priority chat & email support
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center px-6 py-3 rounded-xl border border-kronara-orange text-kronara-orange hover:bg-kronara-orange hover:text-white transition-all font-medium">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="bg-kronara-navy-light border border-kronara-navy-border rounded-2xl p-8 fade-in feature-card flex flex-col">
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-kronara-teal mb-2">Enterprise</h3>
+            <p class="text-sm text-kronara-muted mb-6">For large organizations and franchises</p>
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-bold text-white">Custom</span>
+            </div>
+            <p class="text-sm text-kronara-muted mt-2"><strong class="text-white">31+ staff</strong></p>
+          </div>
+          <div class="border-t border-kronara-navy-border pt-6 mb-8">
+            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
+            <p class="text-2xl font-bold text-white">Custom</p>
+            <p class="text-xs text-kronara-muted mt-1">Tailored to your needs</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Everything in Professional
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Unlimited staff
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Dedicated support
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Custom integrations
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SLA guarantee
+            </li>
+            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
+              <svg class="w-5 h-5 text-kronara-teal flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Multi-franchise support
+            </li>
+          </ul>
+          <a href="#contact" class="block text-center px-6 py-3 rounded-xl border border-kronara-teal text-kronara-teal hover:bg-kronara-teal hover:text-kronara-navy transition-all font-medium">
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Pricing notes -->
+      <div class="mt-12 text-center fade-in">
+        <p class="text-sm text-kronara-muted max-w-2xl mx-auto">
+          All plans include hosting, automatic backups, SSL, and software updates. The one-time setup fee covers your dedicated instance deployment, initial configuration, custom branding, and hands-on onboarding support. Need to add more staff later? Upgrade anytime with no data loss.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-24 md:py-32 relative">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-kronara-orange text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
+        <h2 class="text-3xl md:text-5xl font-bold">
+          Common <span class="gradient-text font-display">questions</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">Do my staff need to download anything?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">No app store download needed. Kronara is a Progressive Web App (PWA) — staff simply visit your studio's URL and tap "Add to Home Screen" on their phone. It works and feels like a native app, complete with push notifications and offline support.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">What does the one-time setup fee cover?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">The setup fee covers deploying your own dedicated Kronara instance, configuring your locations, pay periods, bonus rules, and custom branding (colors, logo, studio name). It also includes a hands-on onboarding session to get your admin team comfortable with the platform.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">Can I upgrade my plan later?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">Absolutely. You can upgrade at any time and your data carries over seamlessly. The difference in the setup fee between tiers is waived on upgrades — you only pay the new monthly rate.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">How does payroll work?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">Staff log their hours and commissions throughout the pay period. At the end of the period, admins review all entries, flag anything that needs correction, and then process payroll with one click. Professional PDF reports are generated and emailed to each staff member and any configured report recipients. You can also set up auto-send to fully automate the process.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">Is my data secure?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">Yes. Each studio gets its own dedicated database instance. All connections are encrypted with SSL, and your data is backed up automatically. We use Railway's infrastructure which provides enterprise-grade security and reliability.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item bg-kronara-navy-light border border-kronara-navy-border rounded-xl overflow-hidden fade-in">
+          <button class="faq-toggle w-full flex items-center justify-between p-6 text-left">
+            <span class="text-white font-medium pr-4">Can I integrate with Google Calendar?</span>
+            <svg class="w-5 h-5 text-kronara-purple flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-kronara-text-secondary">Yes! Growth plan and above includes Google Calendar integration. Staff can import their scheduled shifts directly from Google Calendar, which automatically creates timesheet entries — dramatically reducing manual data entry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA Section -->
+  <section id="contact" class="py-24 md:py-32 bg-kronara-navy-light/30 border-t border-kronara-navy-border relative overflow-hidden">
+    <div class="absolute inset-0 hero-bg"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center fade-in">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Ready to streamline<br>
+          <span class="gradient-text font-display">your studio?</span>
+        </h2>
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto mb-10">
+          Get in touch and we'll have your studio set up on Kronara within 24 hours. Try the demo first, or reach out directly.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="mailto:hello@kronara.com" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            hello@kronara.com
+          </a>
+          <a href="#demo" class="px-8 py-4 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
+            Try the Demo
+          </a>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div class="text-center">
+            <p class="text-3xl font-bold text-white mb-1">24hr</p>
+            <p class="text-sm text-kronara-muted">Setup turnaround</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-white mb-1">99.9%</p>
+            <p class="text-sm text-kronara-muted">Uptime guarantee</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-white mb-1">0</p>
+            <p class="text-sm text-kronara-muted">App store downloads needed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-kronara-navy border-t border-kronara-navy-border py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <img src="assets/images/logo.png" alt="Kronara" class="h-8 w-auto mb-4">
+          <p class="text-sm text-kronara-muted leading-relaxed">
+            The all-in-one studio management platform. Track hours, commissions, and payroll in one beautiful app.
+          </p>
+        </div>
+
+        <!-- Product -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Product</h4>
+          <ul class="space-y-3">
+            <li><a href="#features" class="text-sm text-kronara-muted hover:text-white transition-colors">Features</a></li>
+            <li><a href="#pricing" class="text-sm text-kronara-muted hover:text-white transition-colors">Pricing</a></li>
+            <li><a href="#demo" class="text-sm text-kronara-muted hover:text-white transition-colors">Live Demo</a></li>
+            <li><a href="#screenshots" class="text-sm text-kronara-muted hover:text-white transition-colors">Screenshots</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="#faq" class="text-sm text-kronara-muted hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="mailto:hello@kronara.com" class="text-sm text-kronara-muted hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Documentation</a></li>
+            <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Status</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div>
+          <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-kronara-navy-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-kronara-muted">&copy; 2026 Kronara. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="text-kronara-muted hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          </a>
+          <a href="#" class="text-kronara-muted hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-kronara-navy/95', 'shadow-lg');
+      } else {
+        navbar.classList.remove('bg-kronara-navy/95', 'shadow-lg');
+      }
+    });
+
+    // Pricing toggle
+    const pricingToggle = document.getElementById('pricing-toggle');
+    const toggleDot = document.getElementById('toggle-dot');
+    const monthlyLabel = document.getElementById('monthly-label');
+    const annualLabel = document.getElementById('annual-label');
+    const monthlyPrices = document.querySelectorAll('.pricing-monthly');
+    const annualPrices = document.querySelectorAll('.pricing-annual');
+
+    pricingToggle.addEventListener('click', () => {
+      const isAnnual = pricingToggle.dataset.annual === 'true';
+      pricingToggle.dataset.annual = !isAnnual;
+
+      if (!isAnnual) {
+        toggleDot.style.transform = 'translateX(28px)';
+        monthlyLabel.classList.replace('text-white', 'text-kronara-muted');
+        annualLabel.classList.replace('text-kronara-muted', 'text-white');
+        monthlyPrices.forEach(el => el.classList.add('hidden'));
+        annualPrices.forEach(el => el.classList.remove('hidden'));
+      } else {
+        toggleDot.style.transform = 'translateX(0)';
+        monthlyLabel.classList.replace('text-kronara-muted', 'text-white');
+        annualLabel.classList.replace('text-white', 'text-kronara-muted');
+        monthlyPrices.forEach(el => el.classList.remove('hidden'));
+        annualPrices.forEach(el => el.classList.add('hidden'));
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        // Toggle current
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Scroll fade-in animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
