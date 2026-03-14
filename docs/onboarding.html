@@ -167,16 +167,23 @@
               placeholder="e.g. 2">
           </div>
 
-          <!-- Domain Name Request -->
-          <div>
+          <!-- Domain Name Request (dynamic based on staff count) -->
+          <div id="domain-section">
             <label for="domain-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Preferred Domain Name</label>
-            <div class="flex items-center gap-2">
+            <!-- Subdomain (Starter: 1-5 staff) -->
+            <div id="domain-subdomain" class="flex items-center gap-2">
               <input type="text" id="domain-name" name="domainName"
                 class="flex-1 px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
                 placeholder="yourstudio">
               <span class="text-kronara-muted text-sm whitespace-nowrap">.kronara.app</span>
             </div>
-            <p class="text-kronara-muted text-xs mt-1">Your team will access the app at this address</p>
+            <!-- Custom domain (Studio/Enterprise: 6+ staff) -->
+            <div id="domain-custom" class="hidden">
+              <input type="text" id="domain-name-custom" name="domainNameCustom"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                placeholder="e.g. app.yourstudio.app">
+            </div>
+            <p id="domain-hint" class="text-kronara-muted text-xs mt-1">Your team will access the app at this address</p>
           </div>
 
           <!-- Features -->
@@ -247,6 +254,24 @@
     const numLocationsInput = document.getElementById('num-locations');
     const locationInputs = document.getElementById('location-inputs');
 
+    // Dynamic domain field based on staff count (Starter=1-5 subdomain, Studio/Enterprise=6+ custom)
+    const numStaffInput = document.getElementById('num-staff');
+    const domainSubdomain = document.getElementById('domain-subdomain');
+    const domainCustom = document.getElementById('domain-custom');
+    const domainHint = document.getElementById('domain-hint');
+    numStaffInput.addEventListener('input', () => {
+      const count = parseInt(numStaffInput.value) || 0;
+      if (count > 5) {
+        domainSubdomain.classList.add('hidden');
+        domainCustom.classList.remove('hidden');
+        domainHint.textContent = 'Studio plan includes your own custom .app domain';
+      } else {
+        domainSubdomain.classList.remove('hidden');
+        domainCustom.classList.add('hidden');
+        domainHint.textContent = 'Your team will access the app at this address';
+      }
+    });
+
     // Dynamic location name fields
     numLocationsInput.addEventListener('input', () => {
       const count = Math.max(1, Math.min(20, parseInt(numLocationsInput.value) || 1));
@@ -280,11 +305,11 @@
         });
       } else {
         btn.classList.toggle('active');
-        // Update "All" button state
+        // If deselecting an individual feature, deselect "All"
         const allBtn = featureToggles.querySelector('[data-feature="all"]');
-        const others = featureToggles.querySelectorAll('.toggle-btn:not([data-feature="all"])');
-        const allOthersActive = Array.from(others).every(b => b.classList.contains('active'));
-        allBtn.classList.toggle('active', allOthersActive);
+        if (!btn.classList.contains('active')) {
+          allBtn.classList.remove('active');
+        }
       }
     });
 
@@ -313,7 +338,7 @@
         numLocations: form.numLocations.value,
         locations: locations,
         numAdmins: form.numAdmins.value,
-        domainName: form.domainName.value.trim(),
+        domainName: form.domainName.value.trim() || (form.domainNameCustom ? form.domainNameCustom.value.trim() : ''),
         features: features,
         startDate: form.startDate.value,
         referral: form.referral.value,
