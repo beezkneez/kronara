@@ -50,6 +50,10 @@
       background-clip: text;
     }
     .glow-purple { box-shadow: 0 0 40px rgba(108, 92, 231, 0.3); }
+    .toggle-btn { transition: all 0.2s; }
+    .toggle-btn.active { background: #6C5CE7; border-color: #6C5CE7; color: #fff; }
+    .toggle-btn:not(.active) { background: #1a1a32; border-color: #252540; color: #8a8ea0; }
+    .toggle-btn:not(.active):hover { border-color: #6C5CE7; color: #b0b4c4; }
   </style>
 </head>
 <body class="bg-kronara-navy text-kronara-text-primary min-h-screen">
@@ -140,9 +144,18 @@
             <!-- Number of Locations -->
             <div>
               <label for="num-locations" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Locations <span class="text-kronara-orange">*</span></label>
-              <input type="number" id="num-locations" name="numLocations" required min="1"
+              <input type="number" id="num-locations" name="numLocations" required min="1" value="1"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors">
+            </div>
+          </div>
+
+          <!-- Dynamic Location Names -->
+          <div id="location-names" class="space-y-3">
+            <label class="block text-sm font-medium text-kronara-text-secondary mb-2">Location Name(s) <span class="text-kronara-orange">*</span></label>
+            <div id="location-inputs">
+              <input type="text" name="location-1" required
                 class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
-                placeholder="e.g. 1">
+                placeholder="Location 1 name">
             </div>
           </div>
 
@@ -152,6 +165,54 @@
             <input type="number" id="num-admins" name="numAdmins" required min="1"
               class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
               placeholder="e.g. 2">
+          </div>
+
+          <!-- Domain Name Request -->
+          <div>
+            <label for="domain-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Preferred Domain Name</label>
+            <div class="flex items-center gap-2">
+              <input type="text" id="domain-name" name="domainName"
+                class="flex-1 px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                placeholder="yourstudio">
+              <span class="text-kronara-muted text-sm whitespace-nowrap">.kronara.app</span>
+            </div>
+            <p class="text-kronara-muted text-xs mt-1">Your team will access the app at this address</p>
+          </div>
+
+          <!-- Features -->
+          <div>
+            <label class="block text-sm font-medium text-kronara-text-secondary mb-3">Features You're Interested In</label>
+            <div class="flex flex-wrap gap-2" id="feature-toggles">
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="all">All Features</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="timesheets">Timesheets</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="payroll">Payroll Reports</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="tsps">Shift Posting (TSPS)</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="chat">Team Chat</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="proposals">Class Proposals</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="calendar">Google Calendar Sync</button>
+              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="notifications">Push Notifications</button>
+            </div>
+          </div>
+
+          <!-- Preferred Start Date -->
+          <div>
+            <label for="start-date" class="block text-sm font-medium text-kronara-text-secondary mb-2">Preferred Start Date</label>
+            <input type="date" id="start-date" name="startDate"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors">
+          </div>
+
+          <!-- How did you hear about us -->
+          <div>
+            <label for="referral" class="block text-sm font-medium text-kronara-text-secondary mb-2">How did you hear about us?</label>
+            <select id="referral" name="referral"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white focus:outline-none focus:border-kronara-purple transition-colors">
+              <option value="" class="text-kronara-muted">Select one...</option>
+              <option value="google">Google Search</option>
+              <option value="social">Social Media</option>
+              <option value="referral">Referral / Word of Mouth</option>
+              <option value="reddit">Reddit</option>
+              <option value="other">Other</option>
+            </select>
           </div>
 
           <!-- Special Requests -->
@@ -183,12 +244,65 @@
     const form = document.getElementById('onboarding-form');
     const submitBtn = document.getElementById('submit-btn');
     const formError = document.getElementById('form-error');
+    const numLocationsInput = document.getElementById('num-locations');
+    const locationInputs = document.getElementById('location-inputs');
 
+    // Dynamic location name fields
+    numLocationsInput.addEventListener('input', () => {
+      const count = Math.max(1, Math.min(20, parseInt(numLocationsInput.value) || 1));
+      const existing = locationInputs.querySelectorAll('input');
+      const values = Array.from(existing).map(i => i.value);
+
+      locationInputs.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = `location-${i + 1}`;
+        input.required = true;
+        input.placeholder = count === 1 ? 'Location name' : `Location ${i + 1} name`;
+        input.value = values[i] || '';
+        input.className = 'w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors';
+        if (i > 0) input.style.marginTop = '0.75rem';
+        locationInputs.appendChild(input);
+      }
+    });
+
+    // Feature toggles
+    const featureToggles = document.getElementById('feature-toggles');
+    featureToggles.addEventListener('click', (e) => {
+      const btn = e.target.closest('.toggle-btn');
+      if (!btn) return;
+
+      if (btn.dataset.feature === 'all') {
+        const allActive = btn.classList.contains('active');
+        featureToggles.querySelectorAll('.toggle-btn').forEach(b => {
+          b.classList.toggle('active', !allActive);
+        });
+      } else {
+        btn.classList.toggle('active');
+        // Update "All" button state
+        const allBtn = featureToggles.querySelector('[data-feature="all"]');
+        const others = featureToggles.querySelectorAll('.toggle-btn:not([data-feature="all"])');
+        const allOthersActive = Array.from(others).every(b => b.classList.contains('active'));
+        allBtn.classList.toggle('active', allOthersActive);
+      }
+    });
+
+    // Form submit
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       formError.classList.add('hidden');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
+
+      // Gather location names
+      const locationEls = locationInputs.querySelectorAll('input');
+      const locations = Array.from(locationEls).map(i => i.value.trim()).filter(Boolean);
+
+      // Gather selected features
+      const features = Array.from(featureToggles.querySelectorAll('.toggle-btn.active'))
+        .map(b => b.dataset.feature)
+        .filter(f => f !== 'all');
 
       const data = {
         businessName: form.businessName.value.trim(),
@@ -197,7 +311,12 @@
         phone: form.phone.value.trim(),
         numStaff: form.numStaff.value,
         numLocations: form.numLocations.value,
+        locations: locations,
         numAdmins: form.numAdmins.value,
+        domainName: form.domainName.value.trim(),
+        features: features,
+        startDate: form.startDate.value,
+        referral: form.referral.value,
         specialRequests: form.specialRequests.value.trim(),
       };
 
