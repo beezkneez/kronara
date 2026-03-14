@@ -104,7 +104,7 @@
             <label for="business-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Business / Studio Name <span class="text-kronara-orange">*</span></label>
             <input type="text" id="business-name" name="businessName" required
               class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
-              placeholder="e.g. Aradia Fitness">
+              placeholder="e.g. Studio Inc">
           </div>
 
           <!-- Owner Name -->
@@ -112,7 +112,7 @@
             <label for="owner-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Owner / Contact Name <span class="text-kronara-orange">*</span></label>
             <input type="text" id="owner-name" name="ownerName" required
               class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
-              placeholder="e.g. Jud Beeby">
+              placeholder="e.g. First Last">
           </div>
 
           <!-- Email -->
@@ -191,13 +191,13 @@
             <label class="block text-sm font-medium text-kronara-text-secondary mb-3">Features You're Interested In</label>
             <div class="flex flex-wrap gap-2" id="feature-toggles">
               <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="all">All Features</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="timesheets">Timesheets</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="payroll">Payroll Reports</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="tsps">Shift Posting (TSPS)</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="chat">Team Chat</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="proposals">Class Proposals</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="calendar">Google Calendar Sync</button>
-              <button type="button" class="toggle-btn active px-4 py-2 rounded-lg border text-sm font-medium" data-feature="notifications">Push Notifications</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="timesheets">Timesheets</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="payroll">Payroll Reports</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="tsps">Shift Posting (TSPS)</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="chat">Team Chat</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="proposals">Class Proposals</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="calendar">Google Calendar Sync</button>
+              <button type="button" class="toggle-btn px-4 py-2 rounded-lg border text-sm font-medium" data-feature="notifications">Push Notifications</button>
             </div>
           </div>
 
@@ -292,24 +292,23 @@
       }
     });
 
-    // Feature toggles
+    // Feature toggles - "All Features" and individual picks are mutually exclusive
     const featureToggles = document.getElementById('feature-toggles');
     featureToggles.addEventListener('click', (e) => {
       const btn = e.target.closest('.toggle-btn');
       if (!btn) return;
 
+      const allBtn = featureToggles.querySelector('[data-feature="all"]');
+      const others = featureToggles.querySelectorAll('.toggle-btn:not([data-feature="all"])');
+
       if (btn.dataset.feature === 'all') {
-        const allActive = btn.classList.contains('active');
-        featureToggles.querySelectorAll('.toggle-btn').forEach(b => {
-          b.classList.toggle('active', !allActive);
-        });
+        // Toggle "All" on, deselect all individuals
+        others.forEach(b => b.classList.remove('active'));
+        allBtn.classList.add('active');
       } else {
+        // Deselect "All", toggle this individual
+        allBtn.classList.remove('active');
         btn.classList.toggle('active');
-        // If deselecting an individual feature, deselect "All"
-        const allBtn = featureToggles.querySelector('[data-feature="all"]');
-        if (!btn.classList.contains('active')) {
-          allBtn.classList.remove('active');
-        }
       }
     });
 
