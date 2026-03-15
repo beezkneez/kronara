@@ -1326,6 +1326,43 @@
     </div>
   </footer>
 
+  <!-- Launch Promo Popup -->
+  <div id="promo-popup" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="relative bg-kronara-navy-light border border-kronara-purple/30 rounded-2xl p-8 md:p-10 max-w-lg w-full text-center shadow-2xl" style="box-shadow: 0 0 60px rgba(108, 92, 231, 0.3);">
+      <!-- Close button -->
+      <button id="promo-close" class="absolute top-4 right-4 text-kronara-text-secondary hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Gradient top bar -->
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-kronara-purple to-kronara-orange rounded-t-2xl"></div>
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-kronara-orange/20 text-kronara-orange text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Limited Offer
+      </div>
+
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">First 20 studios get <span class="gradient-text">75% off</span> the setup fee</h3>
+      <p class="text-kronara-text-secondary mb-6">We're launching Kronara and want to partner with studios who'll grow with us. Be one of the first 20 and save up to $450 on setup.</p>
+
+      <!-- Coupon Code -->
+      <div class="bg-kronara-navy border-2 border-dashed border-kronara-purple/50 rounded-xl px-6 py-4 mb-6">
+        <p class="text-kronara-text-secondary text-xs uppercase tracking-widest mb-1">Your Coupon Code</p>
+        <p class="text-3xl font-bold text-white tracking-widest font-mono">20LAUNCH</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button id="copy-coupon" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
+          Copy Code
+        </button>
+        <button id="promo-dismiss" class="px-6 py-3 rounded-lg border border-kronara-navy-border text-kronara-text-secondary hover:text-white hover:border-kronara-purple/50 transition-all">
+          Maybe Later
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script>
     // Screenshot theme toggle
@@ -1512,43 +1549,6 @@
       setTimeout(() => { copyBtn.textContent = 'Copy Code'; }, 2000);
     });
   </script>
-
-  <!-- Launch Promo Popup -->
-  <div id="promo-popup" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div class="relative bg-kronara-navy-light border border-kronara-purple/30 rounded-2xl p-8 md:p-10 max-w-lg w-full text-center shadow-2xl" style="box-shadow: 0 0 60px rgba(108, 92, 231, 0.3);">
-      <!-- Close button -->
-      <button id="promo-close" class="absolute top-4 right-4 text-kronara-text-secondary hover:text-white transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-
-      <!-- Gradient top bar -->
-      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-kronara-purple to-kronara-orange rounded-t-2xl"></div>
-
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 bg-kronara-orange/20 text-kronara-orange text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Limited Offer
-      </div>
-
-      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">First 20 studios get <span class="gradient-text">75% off</span> the setup fee</h3>
-      <p class="text-kronara-text-secondary mb-6">We're launching Kronara and want to partner with studios who'll grow with us. Be one of the first 20 and save up to $450 on setup.</p>
-
-      <!-- Coupon Code -->
-      <div class="bg-kronara-navy border-2 border-dashed border-kronara-purple/50 rounded-xl px-6 py-4 mb-6">
-        <p class="text-kronara-text-secondary text-xs uppercase tracking-widest mb-1">Your Coupon Code</p>
-        <p class="text-3xl font-bold text-white tracking-widest font-mono">20LAUNCH</p>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button id="copy-coupon" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
-          Copy Code
-        </button>
-        <button id="promo-dismiss" class="px-6 py-3 rounded-lg border border-kronara-navy-border text-kronara-text-secondary hover:text-white hover:border-kronara-purple/50 transition-all">
-          Maybe Later
-        </button>
-      </div>
-    </div>
-  </div>
 
 </body>
 </html>
