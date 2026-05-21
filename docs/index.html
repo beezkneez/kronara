@@ -198,6 +198,8 @@
     .mobile-menu {
       transform: translateX(100%);
       transition: transform 0.3s ease;
+      background-color: #141428;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
     }
     .mobile-menu.open {
       transform: translateX(0);
@@ -230,8 +232,8 @@
           <a href="#demo" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-purple text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all">
             Try Demo
           </a>
-          <a href="#pricing" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
-            Get Started
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
+            Join Waitlist
           </a>
         </div>
 
@@ -243,32 +245,32 @@
         </button>
       </div>
     </div>
+  </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-kronara-navy-light border-l border-kronara-navy-border md:hidden z-50">
-      <div class="p-6">
-        <button id="mobile-menu-close" class="mb-8 p-2 text-kronara-text-secondary hover:text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-        <div class="flex flex-col gap-4">
-          <a href="#features" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Features</a>
-          <a href="#screenshots" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Screenshots</a>
-          <a href="#videos" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Videos</a>
-          <a href="#pricing" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Pricing</a>
-          <a href="#faq" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">FAQ</a>
-          <hr class="border-kronara-navy-border my-2">
-          <a href="#demo" class="text-center px-5 py-3 rounded-lg border border-kronara-purple text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all mobile-link">
-            Try Demo
-          </a>
-          <a href="#pricing" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold mobile-link">
-            Get Started
-          </a>
-        </div>
+  <!-- Mobile Menu (outside nav so it isn't affected by nav's backdrop-filter stacking context) -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 h-full border-l border-kronara-navy-border md:hidden z-50">
+    <div class="p-6">
+      <button id="mobile-menu-close" class="mb-8 p-2 text-kronara-text-secondary hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="flex flex-col gap-4">
+        <a href="#features" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Features</a>
+        <a href="#screenshots" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Screenshots</a>
+        <a href="#videos" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Videos</a>
+        <a href="#pricing" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Pricing</a>
+        <a href="#faq" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">FAQ</a>
+        <hr class="border-kronara-navy-border my-2">
+        <a href="#demo" class="text-center px-5 py-3 rounded-lg border border-kronara-purple text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all mobile-link">
+          Try Demo
+        </a>
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold mobile-link">
+          Join Waitlist
+        </a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <!-- Value Highlights -->
   <section class="pt-32 md:pt-40 pb-16 md:pb-20 bg-kronara-navy relative overflow-hidden">
@@ -349,7 +351,7 @@
         <div class="text-center lg:text-left">
           <div class="inline-flex items-center gap-2 bg-kronara-navy-card border border-kronara-navy-border rounded-full px-4 py-2 mb-8">
             <span class="w-2 h-2 bg-kronara-teal rounded-full animate-pulse"></span>
-            <span class="text-xs text-kronara-text-secondary tracking-wide uppercase">Now Available</span>
+            <span class="text-xs text-kronara-text-secondary tracking-wide uppercase">v1 Demo Live · v2 Launching in Weeks</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
@@ -366,20 +368,20 @@
             Built for fitness studios, creative spaces, and service businesses.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-            <a href="#demo" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
-              Try Live Demo
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+            <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
+              Join the Waitlist
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#features" class="px-8 py-4 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              Learn More
+            <a href="#demo" class="px-8 py-4 rounded-xl border border-kronara-purple/50 text-kronara-purple hover:bg-kronara-purple hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
+              Try Live Demo
             </a>
           </div>
+          <p class="text-sm text-kronara-muted max-w-xl mx-auto lg:mx-0 mb-12 italic">
+            The v1 demo is live now — explore it freely. Version 2 with the full feature set launches in just a few weeks. Join the waitlist to lock in your spot and the launch discount.
+          </p>
 
           <!-- Trust indicators -->
           <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start text-sm text-kronara-muted">
@@ -986,8 +988,8 @@
               Hosted at yourname.kronara.app
             </li>
           </ul>
-          <a href="https://buy.stripe.com/aFa28q7pZ66A0Oj5gJ97G05" data-monthly-link="https://buy.stripe.com/aFa28q7pZ66A0Oj5gJ97G05" data-annual-link="https://buy.stripe.com/8x2fZgaCb9iMaoT5gJ97G06" class="pricing-link block text-center px-6 py-3 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all font-medium" target="_blank">
-            Get Started
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist%20-%20Starter&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20for%20the%20Starter%20plan%20and%20secure%20my%20spot%20%2B%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0A%0AThanks%21" class="block text-center px-6 py-3 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all font-medium">
+            Join Waitlist
           </a>
         </div>
 
@@ -1039,8 +1041,8 @@
               Your own custom .app domain
             </li>
           </ul>
-          <a href="https://buy.stripe.com/3cI7sK6lV9iM0OjeRj97G04" data-monthly-link="https://buy.stripe.com/3cI7sK6lV9iM0OjeRj97G04" data-annual-link="https://buy.stripe.com/00w00i9y7cuY8gL24x97G07" class="pricing-link block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold hover:opacity-90 transition-opacity" target="_blank">
-            Get Started
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist%20-%20Studio&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20for%20the%20Studio%20plan%20and%20secure%20my%20spot%20%2B%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0A%0AThanks%21" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold hover:opacity-90 transition-opacity">
+            Join Waitlist
           </a>
         </div>
 
@@ -1233,16 +1235,19 @@
           Ready to streamline<br>
           <span class="gradient-text font-display">your studio?</span>
         </h2>
-        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto mb-10">
-          Get in touch and we'll have your studio set up on Kronara within 24 hours. Try the demo first, or reach out directly.
+        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto mb-4">
+          The v1 demo is live now — version 2 with the full feature set launches in just a few weeks. Join the waitlist to lock in your spot and the 75% off setup discount.
+        </p>
+        <p class="text-kronara-muted text-sm max-w-2xl mx-auto mb-10">
+          Want to test-drive what's there today? Try the demo first, or reach out directly at admin@kronara.app.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="mailto:hello@kronara.app" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-            hello@kronara.app
+            Join the Waitlist
           </a>
           <a href="#demo" class="px-8 py-4 rounded-xl border border-kronara-navy-border text-kronara-text-secondary hover:border-kronara-purple hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
             Try the Demo
@@ -1251,16 +1256,16 @@
 
         <div class="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
           <div class="text-center">
+            <p class="text-3xl font-bold text-white mb-1">Weeks</p>
+            <p class="text-sm text-kronara-muted">Until v2 launch</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-bold text-white mb-1">75% off</p>
+            <p class="text-sm text-kronara-muted">For the first 20 waitlist studios</p>
+          </div>
+          <div class="text-center">
             <p class="text-3xl font-bold text-white mb-1">24hr</p>
-            <p class="text-sm text-kronara-muted">Setup turnaround</p>
-          </div>
-          <div class="text-center">
-            <p class="text-3xl font-bold text-white mb-1">99.9%</p>
-            <p class="text-sm text-kronara-muted">Uptime guarantee</p>
-          </div>
-          <div class="text-center">
-            <p class="text-3xl font-bold text-white mb-1">0</p>
-            <p class="text-sm text-kronara-muted">App store downloads needed</p>
+            <p class="text-sm text-kronara-muted">Setup turnaround at launch</p>
           </div>
         </div>
       </div>
@@ -1296,7 +1301,7 @@
           <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Support</h4>
           <ul class="space-y-3">
             <li><a href="#faq" class="text-sm text-kronara-muted hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="mailto:hello@kronara.app" class="text-sm text-kronara-muted hover:text-white transition-colors">Contact</a></li>
+            <li><a href="mailto:admin@kronara.app" class="text-sm text-kronara-muted hover:text-white transition-colors">Contact</a></li>
             <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Documentation</a></li>
             <li><a href="#" class="text-sm text-kronara-muted hover:text-white transition-colors">Status</a></li>
           </ul>
@@ -1340,22 +1345,24 @@
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 bg-kronara-orange/20 text-kronara-orange text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Limited Offer
+        Launching in Weeks
       </div>
 
-      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">First 20 studios get <span class="gradient-text">75% off</span> the setup fee</h3>
-      <p class="text-kronara-text-secondary mb-6">We're launching Kronara and want to partner with studios who'll grow with us. Be one of the first 20 and save up to $450 on setup.</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Version 2 launches in weeks — <span class="gradient-text">secure your spot</span></h3>
+      <p class="text-kronara-text-secondary mb-2">The v1 demo is live now, but the full v2 release is just weeks away. Join the waitlist to lock in your spot <em>and</em> the launch discount.</p>
+      <p class="text-kronara-text-secondary mb-6">The first 20 studios on the waitlist save up to <span class="text-white font-semibold">$450</span> with <span class="gradient-text font-semibold">75% off setup</span>.</p>
 
       <!-- Coupon Code -->
       <div class="bg-kronara-navy border-2 border-dashed border-kronara-purple/50 rounded-xl px-6 py-4 mb-6">
-        <p class="text-kronara-text-secondary text-xs uppercase tracking-widest mb-1">Your Coupon Code</p>
+        <p class="text-kronara-text-secondary text-xs uppercase tracking-widest mb-1">Your Discount Code</p>
         <p class="text-3xl font-bold text-white tracking-widest font-mono">20LAUNCH</p>
+        <p class="text-kronara-muted text-xs mt-2">Mention this code when you join the waitlist</p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button id="copy-coupon" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
-          Copy Code
-        </button>
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-purple to-kronara-orange text-white font-semibold hover:opacity-90 transition-opacity">
+          Join the Waitlist
+        </a>
         <button id="promo-dismiss" class="px-6 py-3 rounded-lg border border-kronara-navy-border text-kronara-text-secondary hover:text-white hover:border-kronara-purple/50 transition-all">
           Maybe Later
         </button>
@@ -1451,22 +1458,18 @@
       const isAnnual = pricingToggle.dataset.annual === 'true';
       pricingToggle.dataset.annual = !isAnnual;
 
-      const pricingLinks = document.querySelectorAll('.pricing-link');
-
       if (!isAnnual) {
         toggleDot.style.transform = 'translateX(28px)';
         monthlyLabel.classList.replace('text-white', 'text-kronara-muted');
         annualLabel.classList.replace('text-kronara-muted', 'text-white');
         monthlyPrices.forEach(el => el.classList.add('hidden'));
         annualPrices.forEach(el => el.classList.remove('hidden'));
-        pricingLinks.forEach(el => el.href = el.dataset.annualLink);
       } else {
         toggleDot.style.transform = 'translateX(0)';
         monthlyLabel.classList.replace('text-kronara-muted', 'text-white');
         annualLabel.classList.replace('text-white', 'text-kronara-muted');
         monthlyPrices.forEach(el => el.classList.remove('hidden'));
         annualPrices.forEach(el => el.classList.add('hidden'));
-        pricingLinks.forEach(el => el.href = el.dataset.monthlyLink);
       }
     });
 
@@ -1521,7 +1524,6 @@
     const promoPopup = document.getElementById('promo-popup');
     const promoClose = document.getElementById('promo-close');
     const promoDismiss = document.getElementById('promo-dismiss');
-    const copyBtn = document.getElementById('copy-coupon');
 
     // Show popup after 3 seconds
     setTimeout(() => {
@@ -1541,12 +1543,6 @@
     promoDismiss.addEventListener('click', closePromo);
     promoPopup.addEventListener('click', (e) => {
       if (e.target === promoPopup) closePromo();
-    });
-
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('20LAUNCH');
-      copyBtn.textContent = 'Copied!';
-      setTimeout(() => { copyBtn.textContent = 'Copy Code'; }, 2000);
     });
   </script>
 
