@@ -28,6 +28,7 @@
               'orange-light': '#F09A4A',
               'orange-dark': '#D06F1A',
               navy: '#0A0A1A',
+              'navy-header': '#03030F',
               'navy-light': '#141428',
               'navy-card': '#1a1a32',
               'navy-border': '#252540',
@@ -209,7 +210,7 @@
 <body class="bg-kronara-navy text-kronara-text-primary">
 
   <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-kronara-navy/80 border-b border-kronara-navy-border/50 transition-all duration-300">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-kronara-navy-header border-b border-kronara-navy-border/50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-24 md:h-32">
         <!-- Logo -->
@@ -1440,9 +1441,9 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        navbar.classList.add('bg-kronara-navy/95', 'shadow-lg');
+        navbar.classList.add('shadow-lg');
       } else {
-        navbar.classList.remove('bg-kronara-navy/95', 'shadow-lg');
+        navbar.classList.remove('shadow-lg');
       }
     });
 
