@@ -150,6 +150,15 @@
     .scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
     .scrollbar-none::-webkit-scrollbar { display: none; }
     .ss-dot.is-active { background: #D9AE68; width: 1.5rem; border-radius: 999px; }
+    /* The centred slide is the subject; neighbours are context. */
+    .ss-slide {
+      transition: transform .4s cubic-bezier(.22,.61,.36,1), opacity .4s ease;
+      transform: scale(.88);
+      opacity: .45;
+    }
+    .ss-slide.is-current { transform: scale(1); opacity: 1; }
+    .ss-slide.is-current .ss-frame { box-shadow: 0 18px 50px rgba(0,0,0,.55), 0 0 0 1px rgba(217,174,104,.35); }
+    @media (prefers-reduced-motion: reduce) { .ss-slide { transition: none; } }
 
     /* Demo request form */
     .f-lb { display:block; font-size:.8rem; font-weight:600; color:#AEB8C6; margin-bottom:.35rem; }
@@ -958,7 +967,7 @@
       <div class="relative fade-in">
         <div id="ssTrack" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth px-[7%] sm:px-[11%] lg:px-[18%] pb-2">
           <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="0">
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+            <div class="ss-frame aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
                  onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
               <img src="assets/screenshots/staff-dashboard.png"
                    data-light="assets/screenshots/staff-dashboard.png"
@@ -969,7 +978,7 @@
             <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Staff log hours, view their calendar, and track earnings at a glance.</figcaption>
           </figure>
           <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="1">
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+            <div class="ss-frame aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
                  onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
               <img src="assets/screenshots/admin-payroll.png"
                    data-light="assets/screenshots/admin-payroll.png"
@@ -980,7 +989,7 @@
             <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Admins review every entry, process payroll, and send PDF reports.</figcaption>
           </figure>
           <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="2">
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+            <div class="ss-frame aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
                  onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
               <img src="assets/screenshots/reports.png"
                    data-light="assets/screenshots/reports.png"
@@ -991,7 +1000,7 @@
             <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Detailed pay reports with shift breakdowns, bonuses, and PDF export.</figcaption>
           </figure>
           <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="3">
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+            <div class="ss-frame aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
                  onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
               <img src="assets/screenshots/full-admin-overview.png"
                    data-light="assets/screenshots/full-admin-overview.png"
@@ -1002,7 +1011,7 @@
             <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Staff management, payroll, flags and settings, all in one place.</figcaption>
           </figure>
           <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="4">
-            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border bg-kronara-ink cursor-zoom-in"
+            <div class="ss-frame aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border bg-kronara-ink cursor-zoom-in"
                  onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
               <img src="assets/screenshots/mobile-pwa.png"
                    data-light="assets/screenshots/mobile-pwa.png"
@@ -1823,12 +1832,14 @@
       function centreOf(el) {
         return el.offsetLeft - (track.clientWidth - el.clientWidth) / 2;
       }
-      function go(i) {
+      function go(i, instant) {
         current = Math.max(0, Math.min(slides.length - 1, i));
-        track.scrollTo({ left: centreOf(slides[current]), behavior: 'smooth' });
+        track.scrollTo({ left: centreOf(slides[current]), behavior: instant ? 'auto' : 'smooth' });
+        paint();
       }
       function paint() {
         dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+        slides.forEach((sl, i) => sl.classList.toggle('is-current', i === current));
         if (prev) prev.style.opacity = current === 0 ? '.35' : '1';
         if (next) next.style.opacity = current === slides.length - 1 ? '.35' : '1';
       }
@@ -1855,7 +1866,16 @@
         if (e.key === 'ArrowLeft')  { e.preventDefault(); go(current - 1); }
       });
       track.setAttribute('tabindex', '0');
+
+      // Open on the second slide, centred. Done after layout (and after the
+      // images have sizes) or offsetLeft is measured against the wrong widths.
+      const OPEN_AT = 1;
+      function place() { go(OPEN_AT, true); }
       paint();
+      if (document.readyState === 'complete') place();
+      else window.addEventListener('load', place, { once: true });
+      let rz;
+      window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => go(current, true), 150); });
     })();
 
     // ── Demo access request ───────────────────────────────────────────
