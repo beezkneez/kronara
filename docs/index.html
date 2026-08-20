@@ -162,6 +162,17 @@
     .f-in:focus { outline:none; border-color:#D9AE68; box-shadow:0 0 0 3px rgba(217,174,104,.15); }
     .f-in.err { border-color:#E0736F; box-shadow:0 0 0 3px rgba(224,115,111,.15); }
     select.f-in option { background:#0E141C; color:#E9EDF3; }
+    .f-cb {
+      appearance:none; -webkit-appearance:none; width:1.05rem; height:1.05rem; flex:0 0 auto;
+      border:1.5px solid #2A3644; border-radius:.3rem; background:#0E141C; cursor:pointer;
+      transition:background .15s, border-color .15s;
+    }
+    .f-cb:checked { background:#D9AE68; border-color:#D9AE68; }
+    .f-cb:checked::after {
+      content:''; display:block; width:.28rem; height:.55rem; margin:.05rem auto 0;
+      border:solid #140F06; border-width:0 2px 2px 0; transform:rotate(45deg);
+    }
+    .f-cb:focus-visible { outline:none; box-shadow:0 0 0 3px rgba(217,174,104,.25); }
     .f-note { font-size:.78rem; color:#8792A2; margin-top:.35rem; }
 
     /* Ambient hero: aurora + slow drift + a ring that echoes the K mark */
@@ -1069,6 +1080,45 @@
         <input class="f-in" id="dfMembers" name="dfMembers" type="text" placeholder="e.g. 300">
       </div>
           <div class="sm:col-span-2">
+            <label class="f-lb">What are you most interested in? <span class="text-kronara-muted font-normal">(optional)</span></label>
+            <div class="grid sm:grid-cols-2 gap-2 mt-1">
+            <label class="flex items-start gap-3 p-3 rounded-lg border border-kronara-ink-border hover:border-kronara-gold/40 cursor-pointer transition-colors">
+              <input type="checkbox" class="f-cb mt-0.5" name="interest" value="Front desk & members" id="int_front">
+              <span>
+                <span class="block text-sm font-semibold text-kronara-text-primary">Front desk &amp; members</span>
+                <span class="block text-xs text-kronara-muted">booking, events, memberships, storefront</span>
+              </span>
+            </label>
+            <label class="flex items-start gap-3 p-3 rounded-lg border border-kronara-ink-border hover:border-kronara-gold/40 cursor-pointer transition-colors">
+              <input type="checkbox" class="f-cb mt-0.5" name="interest" value="Spaces & private hire" id="int_spaces">
+              <span>
+                <span class="block text-sm font-semibold text-kronara-text-primary">Spaces &amp; private hire</span>
+                <span class="block text-xs text-kronara-muted">parties, room rentals, subleases</span>
+              </span>
+            </label>
+            <label class="flex items-start gap-3 p-3 rounded-lg border border-kronara-ink-border hover:border-kronara-gold/40 cursor-pointer transition-colors">
+              <input type="checkbox" class="f-cb mt-0.5" name="interest" value="Marketing & revenue" id="int_revenue">
+              <span>
+                <span class="block text-sm font-semibold text-kronara-text-primary">Marketing &amp; revenue</span>
+                <span class="block text-xs text-kronara-muted">newsletter, leads, promos, analytics</span>
+              </span>
+            </label>
+            <label class="flex items-start gap-3 p-3 rounded-lg border border-kronara-ink-border hover:border-kronara-gold/40 cursor-pointer transition-colors">
+              <input type="checkbox" class="f-cb mt-0.5" name="interest" value="Team & back office" id="int_team">
+              <span>
+                <span class="block text-sm font-semibold text-kronara-text-primary">Team &amp; back office</span>
+                <span class="block text-xs text-kronara-muted">scheduling, payroll, onboarding, compliance</span>
+              </span>
+            </label>
+            </div>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="f-lb" for="dfNotes">Anything specific you&rsquo;re looking for? <span class="text-kronara-muted font-normal">(optional)</span></label>
+            <textarea class="f-in" id="dfNotes" name="dfNotes" rows="3" placeholder="A feature you need, something your current system can&rsquo;t do, a question&hellip;"></textarea>
+          </div>
+
+          <div class="sm:col-span-2">
             <label class="f-lb" for="whichDemo">Which demo would you like?</label>
             <select class="f-in" id="whichDemo" name="whichDemo">
               <option value="Both">Both &mdash; staff and admin</option>
@@ -1843,6 +1893,8 @@
           phone: val('dfPhone'), business: val('dfBiz'),
           staffSize: val('dfStaff'), memberSize: val('dfMembers'),
           whichDemo: get('whichDemo').value,
+          interests: [...form.querySelectorAll('input[name=interest]:checked')].map(c => c.value),
+          notes: val('dfNotes'),
           source: 'kronara.app demo request'
         };
 
@@ -1874,6 +1926,8 @@
           'Staff size: ' + (data.staffSize || '-'),
           'Member size: ' + (data.memberSize || '-'),
           'Demo requested: ' + data.whichDemo,
+          'Interested in: ' + (data.interests.length ? data.interests.join(', ') : '-'),
+          'Notes: ' + (data.notes || '-'),
           '',
           'Please send me demo access. Thanks!'
         ].join('\n');
