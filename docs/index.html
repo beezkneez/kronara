@@ -161,6 +161,24 @@
       color: #140F06;
     }
 
+    /* Screenshot carousel */
+    .scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+    .scrollbar-none::-webkit-scrollbar { display: none; }
+    .ss-dot.is-active { background: #D9AE68; width: 1.5rem; border-radius: 999px; }
+
+    /* Demo request form */
+    .f-lb { display:block; font-size:.8rem; font-weight:600; color:#AEB8C6; margin-bottom:.35rem; }
+    .f-lb .req { color:#D9AE68; }
+    .f-in {
+      width:100%; background:#0E141C; border:1px solid #263241; border-radius:.65rem;
+      padding:.7rem .9rem; color:#E9EDF3; font-size:.95rem; transition:border-color .15s, box-shadow .15s;
+    }
+    .f-in::placeholder { color:#5d6874; }
+    .f-in:focus { outline:none; border-color:#D9AE68; box-shadow:0 0 0 3px rgba(217,174,104,.15); }
+    .f-in.err { border-color:#E0736F; box-shadow:0 0 0 3px rgba(224,115,111,.15); }
+    select.f-in option { background:#0E141C; color:#E9EDF3; }
+    .f-note { font-size:.78rem; color:#8792A2; margin-top:.35rem; }
+
     /* Ambient hero: aurora + slow drift + a ring that echoes the K mark */
     .aurora-wash {
       background:
@@ -261,10 +279,10 @@
 
         <!-- CTA Buttons -->
         <div class="hidden md:flex items-center gap-3">
-          <a href="#screenshots" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all">
-            Try Demo
+          <a href="#demo-request" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all">
+            Request Demo
           </a>
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2050%25%20launch%20discount%20(code%3A%20LAUNCH10).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
             Join Waitlist
           </a>
         </div>
@@ -295,10 +313,10 @@
         <a href="#pricing" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Pricing</a>
         <a href="#faq" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">FAQ</a>
         <hr class="border-kronara-ink-border my-2">
-        <a href="#screenshots" class="text-center px-5 py-3 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all mobile-link">
-          Try Demo
+        <a href="#demo-request" class="text-center px-5 py-3 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all mobile-link">
+          Request Demo
         </a>
-        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold mobile-link">
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2050%25%20launch%20discount%20(code%3A%20LAUNCH10).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold mobile-link">
           Join Waitlist
         </a>
       </div>
@@ -340,7 +358,7 @@
         <div class="text-center lg:text-left">
           <div class="inline-flex items-center gap-2 bg-kronara-ink-card border border-kronara-ink-border rounded-full px-4 py-2 mb-8">
             <span class="w-2 h-2 bg-kronara-success rounded-full animate-pulse"></span>
-            <span class="text-xs text-kronara-text-secondary tracking-wide uppercase">v1 Demo Live · v2 Launching in Weeks</span>
+            <span class="text-xs text-kronara-text-secondary tracking-wide uppercase">Version 2 is live now</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
@@ -356,22 +374,22 @@
 
           <p class="text-base text-kronara-text-primary max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
             <span class="text-kronara-gold font-semibold">$129 CAD a month.</span>
-            Unlimited staff, white-glove setup included, no setup fee.
+            Unlimited staff. One-time white-glove setup fee — 50% off for the first 10 studios.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-            <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
+            <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2050%25%20launch%20discount%20(code%3A%20LAUNCH10).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
               Join the Waitlist
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#screenshots" class="px-8 py-4 rounded-xl border border-kronara-gold/50 text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all inline-flex items-center justify-center gap-2 text-lg">
-              Try Live Demo
+            <a href="#demo-request" class="px-8 py-4 rounded-xl border border-kronara-gold/50 text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all inline-flex items-center justify-center gap-2 text-lg">
+              Request a Demo
             </a>
           </div>
           <p class="text-sm text-kronara-muted max-w-xl mx-auto lg:mx-0 mb-12 italic">
-            The v1 demo is live now — explore it freely. Version 2 with the full feature set launches in just a few weeks. Join the waitlist to lock in your spot and the launch discount.
+            Version 2 is live now — the full feature set, every module switched on. Request access and we’ll get you in.
           </p>
 
           <!-- Trust indicators -->
@@ -898,47 +916,82 @@
         </div>
       </div>
 
-      <!-- Screenshot Grid -->
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <!-- Screenshot 1 -->
-        <div class="fade-in">
-          <div class="aspect-video w-full rounded-2xl overflow-hidden glow-gold cursor-pointer" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-            <img src="assets/screenshots/staff-dashboard.png" data-light="assets/screenshots/staff-dashboard.png" data-dark="assets/screenshots/staff-dashboard-dark.png" alt="Staff Dashboard" class="ss-img w-full h-full object-cover object-top rounded-2xl hover:scale-105 transition-transform duration-300">
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-4">Staff can log hours, view their calendar, and track earnings at a glance.</p>
+      <!-- Screenshot carousel -->
+      <div class="relative fade-in">
+        <div id="ssTrack" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth px-[7%] sm:px-[11%] lg:px-[18%] pb-2">
+          <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="0">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+                 onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
+              <img src="assets/screenshots/staff-dashboard.png"
+                   data-light="assets/screenshots/staff-dashboard.png"
+                   data-dark="assets/screenshots/staff-dashboard-dark.png"
+                   alt="Staff Dashboard" loading="lazy"
+                   class="ss-img w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+            </div>
+            <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Staff log hours, view their calendar, and track earnings at a glance.</figcaption>
+          </figure>
+          <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="1">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+                 onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
+              <img src="assets/screenshots/admin-payroll.png"
+                   data-light="assets/screenshots/admin-payroll.png"
+                   data-dark="assets/screenshots/admin-payroll-dark.png"
+                   alt="Admin Payroll View" loading="lazy"
+                   class="ss-img w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+            </div>
+            <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Admins review every entry, process payroll, and send PDF reports.</figcaption>
+          </figure>
+          <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="2">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+                 onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
+              <img src="assets/screenshots/reports.png"
+                   data-light="assets/screenshots/reports.png"
+                   data-dark="assets/screenshots/reports-dark.png"
+                   alt="Reports &amp; Pay Breakdown" loading="lazy"
+                   class="ss-img w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+            </div>
+            <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Detailed pay reports with shift breakdowns, bonuses, and PDF export.</figcaption>
+          </figure>
+          <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="3">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border cursor-zoom-in"
+                 onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
+              <img src="assets/screenshots/full-admin-overview.png"
+                   data-light="assets/screenshots/full-admin-overview.png"
+                   data-dark="assets/screenshots/full-admin-overview-dark.png"
+                   alt="Full Admin Dashboard Overview" loading="lazy"
+                   class="ss-img w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+            </div>
+            <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Staff management, payroll, flags and settings, all in one place.</figcaption>
+          </figure>
+          <figure class="ss-slide snap-center shrink-0 w-[86%] sm:w-[78%] lg:w-[64%]" data-index="4">
+            <div class="aspect-video w-full rounded-2xl overflow-hidden border border-kronara-ink-border bg-kronara-ink cursor-zoom-in"
+                 onclick="openLightbox(this.querySelector(&#39;img&#39;).src, this.querySelector(&#39;img&#39;).alt)">
+              <img src="assets/screenshots/mobile-pwa.png"
+                   data-light="assets/screenshots/mobile-pwa.png"
+                   data-dark="assets/screenshots/mobile-pwa-dark.png"
+                   alt="Mobile App View" loading="lazy"
+                   class="ss-img w-full h-full object-contain rounded-2xl transition-transform duration-300 hover:scale-[1.02]">
+            </div>
+            <figcaption class="text-center text-sm text-kronara-text-secondary mt-4 px-4">Install on any phone as a native-feeling app. iOS and Android.</figcaption>
+          </figure>
         </div>
 
-        <!-- Screenshot 2 -->
-        <div class="fade-in">
-          <div class="aspect-video w-full rounded-2xl overflow-hidden glow-copper cursor-pointer" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-            <img src="assets/screenshots/admin-payroll.png" data-light="assets/screenshots/admin-payroll.png" data-dark="assets/screenshots/admin-payroll-dark.png" alt="Admin Payroll View" class="ss-img w-full h-full object-cover object-top rounded-2xl hover:scale-105 transition-transform duration-300">
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-4">Admins review all staff entries, process payroll, and send PDF reports.</p>
-        </div>
+        <button type="button" id="ssPrev" aria-label="Previous screenshot"
+          class="hidden md:flex absolute left-2 top-[38%] -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center bg-kronara-ink-card/90 border border-kronara-ink-border text-kronara-text-secondary hover:text-kronara-ink hover:bg-kronara-gold hover:border-kronara-gold transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" id="ssNext" aria-label="Next screenshot"
+          class="hidden md:flex absolute right-2 top-[38%] -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center bg-kronara-ink-card/90 border border-kronara-ink-border text-kronara-text-secondary hover:text-kronara-ink hover:bg-kronara-gold hover:border-kronara-gold transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
 
-        <!-- Screenshot 3 -->
-        <div class="fade-in">
-          <div class="aspect-video w-full rounded-2xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-            <img src="assets/screenshots/reports.png" data-light="assets/screenshots/reports.png" data-dark="assets/screenshots/reports-dark.png" alt="Reports & Pay Breakdown" class="ss-img w-full h-full object-cover object-top rounded-2xl hover:scale-105 transition-transform duration-300">
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-4">Detailed pay reports with shift breakdowns, bonuses, and PDF export.</p>
+        <div class="flex items-center justify-center gap-2.5 mt-6">
+          <button type="button" class="ss-dot w-2.5 h-2.5 rounded-full bg-kronara-ink-border transition-colors" data-go="0" aria-label="Go to screenshot 1"></button>
+          <button type="button" class="ss-dot w-2.5 h-2.5 rounded-full bg-kronara-ink-border transition-colors" data-go="1" aria-label="Go to screenshot 2"></button>
+          <button type="button" class="ss-dot w-2.5 h-2.5 rounded-full bg-kronara-ink-border transition-colors" data-go="2" aria-label="Go to screenshot 3"></button>
+          <button type="button" class="ss-dot w-2.5 h-2.5 rounded-full bg-kronara-ink-border transition-colors" data-go="3" aria-label="Go to screenshot 4"></button>
+          <button type="button" class="ss-dot w-2.5 h-2.5 rounded-full bg-kronara-ink-border transition-colors" data-go="4" aria-label="Go to screenshot 5"></button>
         </div>
-
-        <!-- Screenshot 4 -->
-        <div class="fade-in">
-          <div class="aspect-[9/16] w-full max-w-xs mx-auto rounded-2xl overflow-hidden border-2 border-kronara-ink-border cursor-pointer" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-            <img src="assets/screenshots/mobile-pwa.png" data-light="assets/screenshots/mobile-pwa.png" data-dark="assets/screenshots/mobile-pwa-dark.png" alt="Mobile PWA View" class="ss-img w-full h-full object-cover object-top rounded-2xl hover:scale-105 transition-transform duration-300">
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-4">Install on any phone as a native-feeling app. Works on iOS and Android.</p>
-        </div>
-      </div>
-
-      <!-- Full-width screenshot -->
-      <div class="fade-in">
-        <div class="aspect-[21/9] w-full rounded-2xl overflow-hidden glow-gold cursor-pointer" onclick="openLightbox(this.querySelector('img').src, this.querySelector('img').alt)">
-          <img src="assets/screenshots/full-admin-overview.png" data-light="assets/screenshots/full-admin-overview.png" data-dark="assets/screenshots/full-admin-overview-dark.png" alt="Full Admin Dashboard Overview" class="ss-img w-full h-full object-cover object-top rounded-2xl hover:scale-105 transition-transform duration-300">
-        </div>
-        <p class="text-center text-sm text-kronara-text-secondary mt-4">Complete admin dashboard: staff management, payroll processing, flags, and settings all in one place.</p>
       </div>
     </div>
     <!-- Background effects -->
@@ -968,12 +1021,6 @@
           <p class="text-kronara-text-secondary mb-6">
             Experience Kronara as a staff member. Log hours, track commissions, view your pay history, and more.
           </p>
-          <a href="mailto:admin@kronara.app?subject=Demo%20Access%20Request%3A%20Staff&body=Studio%20name%3A%20%0AYour%20name%3A%20%0ANumber%20of%20locations%3A%20%0APhone%20(optional)%3A%20%0A%0AI%27d%20like%20access%20to%20the%20staff%20demo.%0A%0AThanks%21" id="demo-staff-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-gold-light text-kronara-ink font-bold text-lg hover:bg-kronara-gold transition-colors">
-            Request Staff Access
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </a>
         </div>
 
         <!-- Admin Demo -->
@@ -988,13 +1035,60 @@
           <p class="text-kronara-text-secondary mb-6">
             See the full admin experience. Manage staff, process payroll, review flags, and configure your studio.
           </p>
-          <a href="mailto:admin@kronara.app?subject=Demo%20Access%20Request%3A%20Admin&body=Studio%20name%3A%20%0AYour%20name%3A%20%0ANumber%20of%20locations%3A%20%0APhone%20(optional)%3A%20%0A%0AI%27d%20like%20access%20to%20the%20admin%20demo.%0A%0AThanks%21" id="demo-admin-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-kronara-gold text-kronara-gold font-bold text-lg hover:bg-kronara-gold hover:text-kronara-ink transition-colors">
-            Request Admin Access
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </a>
         </div>
+      </div>
+
+
+      <!-- Demo request form -->
+      <div id="demo-request" class="max-w-3xl mx-auto mt-14 bg-kronara-ink-card border border-kronara-ink-border rounded-2xl p-8 md:p-10 fade-in scroll-mt-28">
+        <h3 class="text-2xl font-bold text-white mb-2">Request demo access</h3>
+        <p class="text-kronara-text-secondary mb-8">
+          Just a name and email gets you in. The rest helps us point you at the parts that matter to your studio.
+        </p>
+
+        <form id="demoForm" novalidate class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label class="f-lb" for="dfName">Your name <span class="req">*</span></label>
+        <input class="f-in" id="dfName" name="dfName" type="text" placeholder="First and last" required>
+      </div>
+      <div>
+        <label class="f-lb" for="dfEmail">Email <span class="req">*</span></label>
+        <input class="f-in" id="dfEmail" name="dfEmail" type="email" placeholder="you@yourstudio.com" required>
+      </div>
+      <div>
+        <label class="f-lb" for="dfPhone">Phone <span class="text-kronara-muted font-normal">(optional)</span></label>
+        <input class="f-in" id="dfPhone" name="dfPhone" type="tel" placeholder="+1 (555) 000-0000">
+      </div>
+      <div>
+        <label class="f-lb" for="dfBiz">Business name <span class="text-kronara-muted font-normal">(optional)</span></label>
+        <input class="f-in" id="dfBiz" name="dfBiz" type="text" placeholder="Your studio">
+      </div>
+      <div>
+        <label class="f-lb" for="dfStaff">Staff size <span class="text-kronara-muted font-normal">(optional)</span></label>
+        <input class="f-in" id="dfStaff" name="dfStaff" type="text" placeholder="e.g. 12">
+      </div>
+      <div>
+        <label class="f-lb" for="dfMembers">Member size <span class="text-kronara-muted font-normal">(optional)</span></label>
+        <input class="f-in" id="dfMembers" name="dfMembers" type="text" placeholder="e.g. 300">
+      </div>
+          <div class="sm:col-span-2">
+            <label class="f-lb" for="whichDemo">Which demo would you like?</label>
+            <select class="f-in" id="whichDemo" name="whichDemo">
+              <option value="Both">Both &mdash; staff and admin</option>
+              <option value="Staff">Staff only</option>
+              <option value="Admin">Admin only</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-2 mt-2">
+            <button type="submit" id="demoSubmit"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-kronara-gold-light text-kronara-ink font-bold text-lg hover:bg-kronara-gold transition-colors">
+              Request Demo Access
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <p id="demoFormMsg" class="mt-4 text-sm" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
 
       <p class="text-center text-sm text-kronara-muted mt-8">
@@ -1197,7 +1291,7 @@
           <div class="h-px bg-kronara-ink-border mb-6"></div>
 
           <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
-            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">White-glove setup &mdash; no setup fee</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">White-glove setup &amp; onboarding</span></li>
             <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Unlimited staff, no per-seat charge</span></li>
             <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Your own studio.kronara.app</span></li>
             <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Custom branding &amp; themes</span></li>
@@ -1251,11 +1345,17 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-xl font-semibold text-white mb-2">White-glove setup, included &mdash; no setup fee</h3>
+            <h3 class="text-xl font-semibold text-white mb-2">White-glove setup — <span class="text-kronara-gold">50% off for the first 10 studios</span></h3>
             <p class="text-kronara-text-secondary leading-relaxed">
-              We deploy your studio, configure it around how you actually work, apply your branding, migrate what
-              you already have and train your team. Most platforms bill this separately. We don&rsquo;t &mdash; the
-              $129 is the whole cost of running your studio on Kronara.
+              Setup is a one-time fee, and we do the work: deploy your studio, configure it around how you
+              actually work, apply your branding, migrate what you already have and train your team. You are
+              not handed a login and left to it.
+            </p>
+            <p class="text-kronara-text-secondary leading-relaxed mt-3">
+              The first 10 studios on the waitlist take <strong class="text-white">50% off</strong> that fee
+              with code <span class="font-mono font-bold text-kronara-gold">LAUNCH10</span>.
+              <a href="#demo-request" class="text-kronara-gold hover:underline">Request a demo</a> and we will
+              quote it for your studio.
             </p>
           </div>
         </div>
@@ -1398,32 +1498,32 @@
           <span class="gradient-text font-display">your studio?</span>
         </h2>
         <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto mb-4">
-          The v1 demo is live now — version 2 with the full feature set launches in just a few weeks. Join the waitlist to lock in your spot and the 75% off setup discount.
+          Version 2 is live now, with the full feature set. Request a demo and we’ll send you access — and the first 10 studios lock in the 50% launch discount.
         </p>
         <p class="text-kronara-muted text-sm max-w-2xl mx-auto mb-10">
           Want to test-drive what's there today? Try the demo first, or reach out directly at admin@kronara.app.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2050%25%20launch%20discount%20(code%3A%20LAUNCH10).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold-light to-kronara-gold text-kronara-ink font-bold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
             Join the Waitlist
           </a>
-          <a href="#screenshots" class="px-8 py-4 rounded-xl border border-kronara-ink-border text-kronara-text-secondary hover:border-kronara-gold hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
+          <a href="#demo-request" class="px-8 py-4 rounded-xl border border-kronara-ink-border text-kronara-text-secondary hover:border-kronara-gold hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
             Try the Demo
           </a>
         </div>
 
         <div class="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
           <div class="text-center">
-            <p class="text-3xl font-bold text-white mb-1">Weeks</p>
-            <p class="text-sm text-kronara-muted">Until v2 launch</p>
+            <p class="text-3xl font-bold text-white mb-1">Live</p>
+            <p class="text-sm text-kronara-muted">Version 2, available now</p>
           </div>
           <div class="text-center">
-            <p class="text-3xl font-bold text-white mb-1">75% off</p>
-            <p class="text-sm text-kronara-muted">For the first 20 waitlist studios</p>
+            <p class="text-3xl font-bold text-white mb-1">50% off</p>
+            <p class="text-sm text-kronara-muted">For the first 10 waitlist studios</p>
           </div>
           <div class="text-center">
             <p class="text-3xl font-bold text-white mb-1">24hr</p>
@@ -1508,22 +1608,22 @@
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 bg-kronara-copper/20 text-kronara-copper text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        Launching in Weeks
+        Version 2 is live
       </div>
 
-      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Version 2 launches in weeks — <span class="gradient-text">secure your spot</span></h3>
-      <p class="text-kronara-text-secondary mb-2">The v1 demo is live now, but the full v2 release is just weeks away. Join the waitlist to lock in your spot <em>and</em> the launch discount.</p>
-      <p class="text-kronara-text-secondary mb-6">The first 20 studios on the waitlist save up to <span class="text-white font-semibold">$450</span> with <span class="gradient-text font-semibold">75% off setup</span>.</p>
+      <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Version 2 is live — <span class="gradient-text">come and see it</span></h3>
+      <p class="text-kronara-text-secondary mb-2">The full version 2 is live now. Request a demo and we’ll send you access <em>and</em> the launch discount.</p>
+      <p class="text-kronara-text-secondary mb-6">The first 10 studios on the waitlist lock in a <span class="gradient-text font-semibold">50% launch discount</span>.</p>
 
       <!-- Coupon Code -->
       <div class="bg-kronara-ink border-2 border-dashed border-kronara-gold/50 rounded-xl px-6 py-4 mb-6">
         <p class="text-kronara-text-secondary text-xs uppercase tracking-widest mb-1">Your Discount Code</p>
-        <p class="text-3xl font-bold text-white tracking-widest font-mono">20LAUNCH</p>
+        <p class="text-3xl font-bold text-white tracking-widest font-mono">LAUNCH10</p>
         <p class="text-kronara-muted text-xs mt-2">Mention this code when you join the waitlist</p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2050%25%20launch%20discount%20(code%3A%20LAUNCH10).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
           Join the Waitlist
         </a>
         <button id="promo-dismiss" class="px-6 py-3 rounded-lg border border-kronara-ink-border text-kronara-text-secondary hover:text-white hover:border-kronara-gold/50 transition-all">
@@ -1656,6 +1756,136 @@
         }
       });
     });
+
+
+
+    // ── Screenshot carousel ───────────────────────────────────────────
+    (function () {
+      const track = document.getElementById('ssTrack');
+      if (!track) return;
+      const slides = [...track.querySelectorAll('.ss-slide')];
+      const dots = [...document.querySelectorAll('.ss-dot')];
+      const prev = document.getElementById('ssPrev');
+      const next = document.getElementById('ssNext');
+      let current = 0;
+
+      function centreOf(el) {
+        return el.offsetLeft - (track.clientWidth - el.clientWidth) / 2;
+      }
+      function go(i) {
+        current = Math.max(0, Math.min(slides.length - 1, i));
+        track.scrollTo({ left: centreOf(slides[current]), behavior: 'smooth' });
+      }
+      function paint() {
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+        if (prev) prev.style.opacity = current === 0 ? '.35' : '1';
+        if (next) next.style.opacity = current === slides.length - 1 ? '.35' : '1';
+      }
+      // derive the active slide from scroll position so swipe keeps dots honest
+      let tick;
+      track.addEventListener('scroll', () => {
+        clearTimeout(tick);
+        tick = setTimeout(() => {
+          const mid = track.scrollLeft + track.clientWidth / 2;
+          let best = 0, bestD = Infinity;
+          slides.forEach((s, i) => {
+            const d = Math.abs((s.offsetLeft + s.clientWidth / 2) - mid);
+            if (d < bestD) { bestD = d; best = i; }
+          });
+          current = best; paint();
+        }, 80);
+      }, { passive: true });
+
+      prev && prev.addEventListener('click', () => go(current - 1));
+      next && next.addEventListener('click', () => go(current + 1));
+      dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.go)));
+      track.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(current + 1); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); go(current - 1); }
+      });
+      track.setAttribute('tabindex', '0');
+      paint();
+    })();
+
+    // ── Demo access request ───────────────────────────────────────────
+    // Set FORM_ENDPOINT to a form backend (Formspree, Basin, or your own
+    // Railway route) and submissions POST as JSON. Left empty, the form
+    // falls back to a prefilled email so it still works on static hosting.
+    const FORM_ENDPOINT = "";
+    const DEMO_INBOX = "admin@kronara.app";
+
+    (function () {
+      const form = document.getElementById('demoForm');
+      if (!form) return;
+      const msg = document.getElementById('demoFormMsg');
+      const btn = document.getElementById('demoSubmit');
+      const get = id => document.getElementById(id);
+      const val = id => (get(id).value || '').trim();
+
+      function setMsg(text, ok) {
+        msg.textContent = text;
+        msg.className = 'mt-4 text-sm ' + (ok ? 'text-kronara-success' : 'text-[#E0736F]');
+      }
+      function markBad(el, bad) { el.classList.toggle('err', bad); }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const name = val('dfName'), email = val('dfEmail');
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        markBad(get('dfName'), !name);
+        markBad(get('dfEmail'), !emailOk);
+        if (!name || !emailOk) {
+          setMsg(!name ? 'Please add your name.' : 'That email address does not look right.', false);
+          (!name ? get('dfName') : get('dfEmail')).focus();
+          return;
+        }
+
+        const data = {
+          name: name, email: email,
+          phone: val('dfPhone'), business: val('dfBiz'),
+          staffSize: val('dfStaff'), memberSize: val('dfMembers'),
+          whichDemo: get('whichDemo').value,
+          source: 'kronara.app demo request'
+        };
+
+        if (FORM_ENDPOINT) {
+          btn.disabled = true; setMsg('Sending…', true);
+          try {
+            const r = await fetch(FORM_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(data)
+            });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            form.reset();
+            setMsg('Thanks — we have your details and will send your login shortly.', true);
+          } catch (err) {
+            setMsg('Something went wrong sending that. Please email ' + DEMO_INBOX + ' and we will sort it out.', false);
+          } finally {
+            btn.disabled = false;
+          }
+          return;
+        }
+
+        // No endpoint configured: hand it to the visitor's mail client.
+        const lines = [
+          'Name: ' + data.name,
+          'Email: ' + data.email,
+          'Phone: ' + (data.phone || '-'),
+          'Business: ' + (data.business || '-'),
+          'Staff size: ' + (data.staffSize || '-'),
+          'Member size: ' + (data.memberSize || '-'),
+          'Demo requested: ' + data.whichDemo,
+          '',
+          'Please send me demo access. Thanks!'
+        ].join('\n');
+        window.location.href = 'mailto:' + DEMO_INBOX
+          + '?subject=' + encodeURIComponent('Demo Access Request: ' + data.whichDemo)
+          + '&body=' + encodeURIComponent(lines);
+        setMsg('Opening your email app — just hit send and we will take it from there.', true);
+      });
+    })();
 
     // Launch Promo Popup
     const promoPopup = document.getElementById('promo-popup');
