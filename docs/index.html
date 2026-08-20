@@ -161,6 +161,11 @@
       color: #140F06;
     }
 
+    /* Feature accordions */
+    summary { list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    .pl-13 { padding-left: 3.25rem; }
+
     /* Nav blur */
     .nav-blur {
       backdrop-filter: blur(20px);
@@ -225,8 +230,7 @@
         <div class="hidden md:flex items-center gap-8">
           <a href="#platform" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Platform</a>
           <a href="#features" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Features</a>
-          <a href="#screenshots" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Screenshots</a>
-          <a href="#videos" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Videos</a>
+          <a href="#screenshots" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">See it</a>
           <a href="#security" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Security</a>
           <a href="#pricing" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">Pricing</a>
           <a href="#faq" class="text-sm text-kronara-text-secondary hover:text-white transition-colors">FAQ</a>
@@ -234,10 +238,10 @@
 
         <!-- CTA Buttons -->
         <div class="hidden md:flex items-center gap-3">
-          <a href="#demo" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all">
+          <a href="#screenshots" class="text-sm px-5 py-2.5 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all">
             Try Demo
           </a>
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-sm px-5 py-2.5 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
             Join Waitlist
           </a>
         </div>
@@ -263,88 +267,20 @@
       <div class="flex flex-col gap-4">
         <a href="#platform" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Platform</a>
         <a href="#features" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Features</a>
-        <a href="#screenshots" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Screenshots</a>
-        <a href="#videos" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Videos</a>
+        <a href="#screenshots" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">See it</a>
         <a href="#security" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Security</a>
         <a href="#pricing" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">Pricing</a>
         <a href="#faq" class="text-lg text-kronara-text-secondary hover:text-white transition-colors mobile-link">FAQ</a>
         <hr class="border-kronara-ink-border my-2">
-        <a href="#demo" class="text-center px-5 py-3 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all mobile-link">
+        <a href="#screenshots" class="text-center px-5 py-3 rounded-lg border border-kronara-gold text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all mobile-link">
           Try Demo
         </a>
-        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold mobile-link">
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="text-center px-5 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold mobile-link">
           Join Waitlist
         </a>
       </div>
     </div>
   </div>
-
-  <!-- Value Highlights -->
-  <section class="pt-32 md:pt-40 pb-16 md:pb-20 bg-kronara-ink relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Value Banner -->
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">These 3 Features Alone Will Save You <span class="text-kronara-gold">Countless Hours</span></h2>
-        <p class="text-lg text-kronara-text-secondary max-w-3xl mx-auto mb-6">
-          Stop spending your week emailing staff back and forth about shifts, schedules, and payroll. What is your time worth? Spend it improving your business and acquiring new clients — not buried in admin work.
-        </p>
-        <div class="inline-flex items-center gap-3 bg-kronara-ink-light/80 border border-kronara-gold/20 rounded-xl px-6 py-4">
-          <svg class="w-6 h-6 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
-          <p class="text-white italic">"Before Kronara, at Aradia, we spent up to <span class="text-kronara-gold font-bold">15 hours per week</span> on these tasks alone."</p>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-
-        <!-- TSPS Highlight -->
-        <div class="bg-gradient-to-br from-kronara-gold/10 to-kronara-ink-light border border-kronara-gold/30 rounded-2xl p-8 md:p-10 fade-in relative">
-          <div class="absolute top-4 right-4 bg-kronara-gold/20 text-kronara-gold text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Exclusive</div>
-          <div class="w-14 h-14 rounded-xl bg-kronara-gold/20 flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Shift Posting & Swaps <span class="text-kronara-gold">(TSPS)</span></h3>
-          <p class="text-kronara-text-secondary leading-relaxed mb-4">
-            Our exclusive TSPS feature alone makes Kronara worth every penny. No more group texts, no more phone tag. Staff post shifts they need covered, others claim them instantly.
-          </p>
-          <p class="text-white font-medium">
-            Save hours every week that you'd otherwise spend scrambling to find coverage.
-          </p>
-        </div>
-
-        <!-- QuickBooks Sync Highlight -->
-        <div class="bg-gradient-to-br from-kronara-copper/10 to-kronara-ink-light border border-kronara-copper/30 rounded-2xl p-8 md:p-10 fade-in relative">
-          <div class="absolute top-4 right-4 bg-kronara-copper/20 text-kronara-copper text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Auto Sync</div>
-          <div class="w-14 h-14 rounded-xl bg-kronara-copper/20 flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">QuickBooks <span class="text-kronara-copper">Auto Sync</span></h3>
-          <p class="text-kronara-text-secondary leading-relaxed mb-4">
-            Connect QuickBooks Online and your timesheets sync automatically at the end of each pay period. No manual data entry, no CSV imports, no copy-paste errors.
-          </p>
-          <p class="text-white font-medium">
-            Turn hours of bookkeeping into seconds.
-          </p>
-        </div>
-
-        <!-- Schedule Requests Highlight -->
-        <div class="bg-gradient-to-br from-kronara-success/10 to-kronara-ink-light border border-kronara-success/30 rounded-2xl p-8 md:p-10 fade-in relative">
-          <div class="absolute top-4 right-4 bg-kronara-success/20 text-kronara-success text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Exclusive</div>
-          <div class="w-14 h-14 rounded-xl bg-kronara-success/20 flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Schedule <span class="text-kronara-success">Requests</span></h3>
-          <p class="text-kronara-text-secondary leading-relaxed mb-4">
-            Staff submit class and schedule requests directly through the app. Review, approve, or suggest changes from a centralized dashboard. No more back-and-forth emails about scheduling.
-          </p>
-          <p class="text-white font-medium">
-            Empower your team to grow your class offerings.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- Hero Section -->
   <section class="hero-bg grid-pattern min-h-screen flex items-center pt-20 relative overflow-hidden">
@@ -362,27 +298,29 @@
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4">
-            <span class="text-white">Manage Your</span><br>
-            <span class="gradient-text font-display">Studio Smarter</span>
+            <span class="text-white">Your whole studio.</span><br>
+            <span class="gradient-text font-display">One operating system.</span>
           </h1>
 
-          <p class="text-2xl md:text-3xl font-display text-white/90 mb-6 tracking-wide">
-            Your Studio Operating System
+          <p class="text-lg md:text-xl text-kronara-text-secondary max-w-xl mx-auto lg:mx-0 mb-6 leading-relaxed">
+            Booking, events, memberships, storefront, newsletter, lead follow-up, sales analytics
+            and payroll &mdash; twenty-one modules, all switched on, all for one price. Built for
+            fitness studios, creative spaces, and service businesses.
           </p>
 
-          <p class="text-lg md:text-xl text-kronara-text-secondary max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-            Booking, events, memberships, retail, marketing and payroll &mdash; one system
-            your whole studio runs on. Built for fitness studios, creative spaces, and service businesses.
+          <p class="text-base text-kronara-text-primary max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+            <span class="text-kronara-gold font-semibold">$129 CAD a month.</span>
+            Unlimited staff, white-glove setup included, no setup fee.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-            <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
+            <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="group px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg pulse-glow hover:scale-105 transition-transform inline-flex items-center justify-center gap-2">
               Join the Waitlist
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#demo" class="px-8 py-4 rounded-xl border border-kronara-gold/50 text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all inline-flex items-center justify-center gap-2 text-lg">
+            <a href="#screenshots" class="px-8 py-4 rounded-xl border border-kronara-gold/50 text-kronara-gold hover:bg-kronara-gold hover:text-kronara-ink transition-all inline-flex items-center justify-center gap-2 text-lg">
               Try Live Demo
             </a>
           </div>
@@ -446,6 +384,16 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aradia proof strip -->
+  <section class="pb-6 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+      <div class="inline-flex items-start gap-3 bg-kronara-ink-light/80 border border-kronara-gold/20 rounded-xl px-6 py-4 fade-in">
+        <svg class="w-6 h-6 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        <p class="text-white italic">&ldquo;Before Kronara, at Aradia, we spent up to <span class="text-kronara-gold font-bold not-italic">15 hours per week</span> on these tasks alone.&rdquo;</p>
       </div>
     </div>
   </section>
@@ -572,390 +520,308 @@
   </section>
 
   <section id="features" class="py-24 md:py-32 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center fade-in">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
         <p class="text-kronara-gold text-sm font-semibold uppercase tracking-widest mb-4">Features</p>
         <h2 class="text-3xl md:text-5xl font-bold mb-6">
           Everything you need to<br>
           <span class="gradient-text font-display">run your studio</span>
         </h2>
         <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
-          Booking, events, memberships, retail, marketing and payroll in one system — so your front desk, your members and your team all work from the same source of truth.
+          Twenty-one modules, all switched on. Tap any one to see what it does.
         </p>
       </div>
 
-      <div class="fade-in mb-8 mt-20">
-        <div class="flex items-center gap-4 mb-3">
+      <div class="fade-in mt-16 first:mt-0">
+        <div class="flex items-center gap-4 mb-2">
           <p class="text-kronara-gold text-xs font-bold uppercase tracking-widest whitespace-nowrap">Front desk &amp; members</p>
           <div class="h-px flex-1 bg-kronara-ink-border"></div>
         </div>
-        <p class="text-kronara-muted text-sm max-w-2xl">What your members see and touch — booking, buying and turning up.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+        <p class="text-kronara-muted text-sm mb-2">What your members see and touch.</p>
+        <div class="grid lg:grid-cols-2 lg:gap-x-12">
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Booking &amp; Schedule</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Members browse the schedule and book classes, drop-ins and multi-week series from any device. Postponements and cancellations notify them automatically.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Events &amp; Ticketing</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Sell tickets to workshops, socials and specials from the same place members already book &mdash; no separate ticketing platform taking a slice of every sale.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Memberships &amp; Passes</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Class packs, credits and recurring memberships. Balances apply themselves at the point of booking, so nobody is counting credits by hand.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Booking &amp; Schedule</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Members browse the schedule and book classes, drop-ins and multi-week series from any device. Postponements and cancellations notify them automatically.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/>
-            </svg>
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Storefront</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Run your studio boutique inside Kronara. Members buy online and pick up in studio, with stock tracked against the same customer record.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zM5 12h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Gift Cards &amp; Store Credit</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Sell and redeem gift cards, and let balances apply automatically toward passes and memberships instead of being reconciled by hand.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 3h3m-3 3h6m0-6v.01"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Fast Check-In</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Check members in by QR or NFC at the door, so the front desk keeps moving through a busy changeover.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Events &amp; Ticketing</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Sell tickets to workshops, socials and specials from the same place members already book — no separate ticketing platform taking a slice of every sale.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Memberships &amp; Passes</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Sell class packs, credits and recurring memberships. Balances apply themselves at the point of booking, so nobody is counting credits by hand.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Storefront</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Run your studio boutique inside Kronara. Members buy online and pick up in studio, with stock tracked against the same customer record.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zM5 12h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Gift Cards &amp; Store Credit</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Sell and redeem gift cards, and let balances apply automatically toward passes and memberships instead of being reconciled by hand.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 3h3m-3 3h6m0-6v.01"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Fast Check-In</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Check members in by QR or NFC at the door, so the front desk keeps moving through a busy changeover.
-          </p>
         </div>
       </div>
 
-      <div class="fade-in mb-8 mt-20">
-        <div class="flex items-center gap-4 mb-3">
+      <div class="fade-in mt-16 first:mt-0">
+        <div class="flex items-center gap-4 mb-2">
           <p class="text-kronara-gold text-xs font-bold uppercase tracking-widest whitespace-nowrap">Spaces &amp; private hire</p>
           <div class="h-px flex-1 bg-kronara-ink-border"></div>
         </div>
-        <p class="text-kronara-muted text-sm max-w-2xl">The hours your studio is not running classes are still worth something.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-            </svg>
+        <p class="text-kronara-muted text-sm mb-2">The hours you are not running classes are still worth something.</p>
+        <div class="grid lg:grid-cols-2 lg:gap-x-12">
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Parties &amp; Private Bookings</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Party and private-hire bookings with their own types, rooms, coordinators and staffing, on a calendar that already knows what else is in the building.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Room Rentals</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Rent rooms by the hour or on contract, tracked against the same schedule so nothing gets double-booked.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Parties &amp; Private Bookings</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Take party and private-hire bookings with their own types, rooms, coordinators and staffing, on a calendar that already knows what else is in the building.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
-            </svg>
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Suite Subleases</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Sublease suites to resident practitioners, with tenants, suites and contracts in one place instead of a folder of PDFs.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Room Rentals</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Rent rooms out by the hour or on contract, tracked against the same schedule so nothing gets double-booked.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Suite Subleases</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Sublease suites to resident practitioners, with tenants, suites and contracts held in one place instead of a folder of PDFs.
-          </p>
         </div>
       </div>
 
-      <div class="fade-in mb-8 mt-20">
-        <div class="flex items-center gap-4 mb-3">
+      <div class="fade-in mt-16 first:mt-0">
+        <div class="flex items-center gap-4 mb-2">
           <p class="text-kronara-copper text-xs font-bold uppercase tracking-widest whitespace-nowrap">Marketing, revenue &amp; retention</p>
           <div class="h-px flex-1 bg-kronara-ink-border"></div>
         </div>
-        <p class="text-kronara-muted text-sm max-w-2xl">Filling classes and keeping members — without another subscription.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+        <p class="text-kronara-muted text-sm mb-2">Filling classes and keeping members &mdash; without another subscription.</p>
+        <div class="grid lg:grid-cols-2 lg:gap-x-12">
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Newsletter</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Write and send to your member list from inside Kronara. Subscribers stay in sync on their own, so there is no exporting lists to a separate email platform every time somebody joins or cancels.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Lead Follow-Up</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Lapsed members drop into automatic nudge campaigns, so win-backs go out on schedule rather than whenever somebody remembers.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Promo Codes &amp; Leaderboard</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Run promotions, attribute every redemption to the staff member who drove it, and track the resulting bonuses on a leaderboard.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Newsletter</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Write and send to your member list from inside Kronara. Subscribers stay in sync on their own, so there is no exporting lists to a separate email platform every time somebody joins or cancels.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
-            </svg>
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Sales &amp; Analytics</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Revenue, class performance and retention on one dashboard, drawn from live booking and retail data rather than a spreadsheet somebody updates on Fridays.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Member Community</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">A studio feed where members celebrate wins and cheer each other on. The cheapest retention you will ever run, and it lives where they already book.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-copper/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Member Messaging</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Members message the studio and their classes directly, so questions get answered without another inbox to watch.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Lead Follow-Up</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Lapsed members drop into automatic nudge campaigns, so win-backs go out on schedule rather than whenever somebody finally remembers to send them.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Promo Codes &amp; Leaderboard</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Run promotions, attribute every redemption to the staff member who drove it, and track the resulting bonuses on a leaderboard.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Sales &amp; Analytics</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            See revenue, class performance and retention on one dashboard, drawn from live booking and retail data rather than a spreadsheet somebody updates on Fridays.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Member Community</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            A studio feed where members celebrate wins and cheer each other on. The cheapest retention you will ever run, and it lives where they already book.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-copper/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Member Messaging</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Members message the studio and their classes directly, so questions get answered without another inbox to watch.
-          </p>
         </div>
       </div>
 
-      <div class="fade-in mb-8 mt-20">
-        <div class="flex items-center gap-4 mb-3">
+      <div class="fade-in mt-16 first:mt-0">
+        <div class="flex items-center gap-4 mb-2">
           <p class="text-kronara-success text-xs font-bold uppercase tracking-widest whitespace-nowrap">Team &amp; back office</p>
           <div class="h-px flex-1 bg-kronara-ink-border"></div>
         </div>
-        <p class="text-kronara-muted text-sm max-w-2xl">The operational half — rotas, pay and compliance.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+        <p class="text-kronara-muted text-sm mb-2">Rotas, pay and compliance.</p>
+        <div class="grid lg:grid-cols-2 lg:gap-x-12">
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Timesheets &amp; Commissions</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Staff log hours, tips and retail commission against date, location and class. Everything rolls into payroll automatically.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Payroll &amp; QuickBooks</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Pay periods calculate themselves and sync straight to QuickBooks Online at period end. No CSV imports, no re-keying, no copy-paste errors.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Shift Posting &amp; Swaps</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Staff post shifts they need covered and colleagues claim them instantly. No group texts, no phone tag, no scrambling for coverage.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Timesheets &amp; Commissions</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Staff log hours, tips and retail commission against date, location and class. Everything rolls into payroll automatically.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
+          <div>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Schedule Requests</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Instructors pitch classes and request changes through a dashboard you review in one place, instead of a back-and-forth email thread.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Team Chat, Polls &amp; Forms</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Group messaging for the whole team, plus polls and forms for when you need an answer from everyone at once.</p>
+          </details>
+          <details class="group border-b border-kronara-ink-border last:border-0">
+            <summary class="flex items-center gap-4 py-4 cursor-pointer select-none">
+              <span class="w-9 h-9 rounded-lg bg-kronara-success/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              </span>
+              <span class="flex-1 text-white font-semibold">Compliance &amp; Onboarding</span>
+              <svg class="w-5 h-5 text-kronara-muted flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed pb-5 pl-13 pr-6">Tax forms, direct deposit details, employment agreements, certifications and onboarding checklists, all filed against the right person.</p>
+          </details>
           </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Payroll &amp; QuickBooks</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Pay periods calculate themselves and sync straight to QuickBooks Online at period end. No CSV imports, no re-keying, no copy-paste errors.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Shift Posting &amp; Swaps</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Staff post shifts they need covered and colleagues claim them instantly. No group texts, no phone tag, no scrambling for coverage.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Schedule Requests</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Instructors pitch classes and request schedule changes through a dashboard you review in one place, instead of a back-and-forth email thread.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Team Chat, Polls &amp; Forms</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Group messaging for the whole team, plus polls and forms for when you need an answer from everyone at once.
-          </p>
-        </div>
-
-        <div class="feature-card bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
-          <div class="w-12 h-12 rounded-xl bg-kronara-success/15 flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">Compliance &amp; Onboarding</h3>
-          <p class="text-kronara-text-secondary leading-relaxed">
-            Tax forms, direct deposit details, employment agreements, certifications and onboarding checklists, all filed against the right person.
-          </p>
         </div>
       </div>
 
-      <div class="mt-24 fade-in">
-        <div class="flex items-center gap-4 mb-3">
+      <div class="mt-16 fade-in">
+        <div class="flex items-center gap-4 mb-4">
           <p class="text-kronara-muted text-xs font-bold uppercase tracking-widest whitespace-nowrap">Also included</p>
           <div class="h-px flex-1 bg-kronara-ink-border"></div>
         </div>
-        <p class="text-kronara-muted text-sm max-w-2xl mb-8">Smaller pieces that would each be somebody else&rsquo;s add-on.</p>
-        <div class="flex flex-wrap gap-3">
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Member skills &amp; goal tracking
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Staff training library
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Certification tracking &amp; reminders
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Equipment checklists
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Studio sign-out for kit
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Incident reports
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Membership freezes
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Make-up credits
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Par-Q health forms
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Front desk scheduling
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Projects &amp; task boards
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Polls &amp; forms
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Studio closures &amp; year-at-a-glance
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Knowledge base &amp; staff portal
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Support desk with auto-tagging
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Member invites
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            Custom themes &amp; branding
-          </span>
-          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-4 py-2 text-sm text-kronara-text-secondary">
-            <svg class="w-4 h-4 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            CSV exports
-          </span>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Member skills &amp; goal tracking</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Staff training library</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Certification tracking &amp; reminders</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Equipment checklists</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Studio sign-out for kit</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Incident reports</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Membership freezes</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Make-up credits</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Par-Q health forms</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Front desk scheduling</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Projects &amp; task boards</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Polls &amp; forms</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Studio closures &amp; year-at-a-glance</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Knowledge base &amp; staff portal</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Support desk with auto-tagging</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Member invites</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Custom themes &amp; branding</span>
+          <span class="inline-flex items-center gap-2 bg-kronara-ink-light border border-kronara-ink-border rounded-full px-3.5 py-1.5 text-xs text-kronara-text-secondary"><svg class="w-3.5 h-3.5 text-kronara-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>CSV exports</span>
         </div>
       </div>
     </div>
@@ -1029,124 +895,6 @@
         <p class="text-center text-sm text-kronara-text-secondary mt-4">Complete admin dashboard: staff management, payroll processing, flags, and settings all in one place.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm" onclick="closeLightbox(event)">
-    <button onclick="closeLightbox(event, true)" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    <img id="lightbox-img" src="" alt="" class="max-w-[92vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
-  </div>
-
-  <!-- Video Section -->
-  <section id="videos" class="py-24 md:py-32 relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20 fade-in">
-        <p class="text-kronara-success text-sm font-semibold uppercase tracking-widest mb-4">Videos</p>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">
-          Watch how it <span class="gradient-text font-display">works</span>
-        </h2>
-        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
-          Quick video walkthroughs of Kronara's key features.
-        </p>
-      </div>
-
-      <!-- Main video -->
-      <div class="mb-12 fade-in">
-        <div class="video-placeholder aspect-video w-full max-w-4xl mx-auto rounded-2xl glow-gold">
-          <div class="play-btn mb-4">
-            <svg class="w-8 h-8 text-kronara-gold ml-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-          <p class="text-kronara-muted font-medium text-lg">Product Overview</p>
-          <p class="text-kronara-muted/50 text-sm mt-2">A complete walkthrough of Kronara's features</p>
-          <p class="text-kronara-muted/30 text-xs mt-4">Replace with video embed or link to: assets/videos/product-overview.mp4</p>
-        </div>
-      </div>
-
-      <!-- Video grid -->
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Video 1 -->
-        <div class="fade-in">
-          <div class="video-placeholder aspect-video w-full rounded-2xl">
-            <div class="play-btn mb-3">
-              <svg class="w-6 h-6 text-kronara-gold ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <p class="text-kronara-muted font-medium">Getting Started</p>
-            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/getting-started.mp4</p>
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-3">Set up your studio in under 5 minutes</p>
-        </div>
-
-        <!-- Video 2 -->
-        <div class="fade-in">
-          <div class="video-placeholder aspect-video w-full rounded-2xl">
-            <div class="play-btn mb-3">
-              <svg class="w-6 h-6 text-kronara-copper ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <p class="text-kronara-muted font-medium">Staff Workflow</p>
-            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/staff-workflow.mp4</p>
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-3">How staff log hours and commissions</p>
-        </div>
-
-        <!-- Video 3 -->
-        <div class="fade-in">
-          <div class="video-placeholder aspect-video w-full rounded-2xl">
-            <div class="play-btn mb-3">
-              <svg class="w-6 h-6 text-kronara-success ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <p class="text-kronara-muted font-medium">Admin Payroll</p>
-            <p class="text-kronara-muted/30 text-xs mt-2">assets/videos/admin-payroll.mp4</p>
-          </div>
-          <p class="text-center text-sm text-kronara-text-secondary mt-3">Processing payroll and generating reports</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
-  <section class="py-24 md:py-32 bg-kronara-ink-light/30 border-y border-kronara-ink-border relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20 fade-in">
-        <p class="text-kronara-gold text-sm font-semibold uppercase tracking-widest mb-4">How It Works</p>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">
-          Up and running in <span class="gradient-text font-display">three steps</span>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center fade-in">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-gold to-kronara-gold-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">1</div>
-          <h3 class="text-xl font-semibold text-white mb-3">We Set You Up</h3>
-          <p class="text-kronara-text-secondary">We deploy your own Kronara instance, configure your locations, pay periods, and bonus rules. Custom branding included.</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-gold to-kronara-copper flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">2</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Add Your Team</h3>
-          <p class="text-kronara-text-secondary">Invite staff members with PIN-based login. They install the app on their phones and start logging immediately.</p>
-        </div>
-        <div class="text-center fade-in">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-copper to-kronara-copper-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">3</div>
-          <h3 class="text-xl font-semibold text-white mb-3">Run Payroll</h3>
-          <p class="text-kronara-text-secondary">Review entries, process payroll with one click, and send professional PDF reports via email automatically.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Demo Section -->
-  <section id="demo" class="py-24 md:py-32 relative overflow-hidden">
     <!-- Background effects -->
     <div class="absolute inset-0 hero-bg"></div>
 
@@ -1217,6 +965,49 @@
       </p>
     </div>
   </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 backdrop-blur-sm" onclick="closeLightbox(event)">
+    <button onclick="closeLightbox(event, true)" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-[92vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- Video Section -->
+
+  <!-- How It Works Section -->
+  <section class="py-24 md:py-32 bg-kronara-ink-light/30 border-y border-kronara-ink-border relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20 fade-in">
+        <p class="text-kronara-gold text-sm font-semibold uppercase tracking-widest mb-4">How It Works</p>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Up and running in <span class="gradient-text font-display">three steps</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-gold to-kronara-gold-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">1</div>
+          <h3 class="text-xl font-semibold text-white mb-3">We Set You Up</h3>
+          <p class="text-kronara-text-secondary">We deploy your own Kronara instance, configure your locations, pay periods, and bonus rules. Custom branding included.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-gold to-kronara-copper flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">2</div>
+          <h3 class="text-xl font-semibold text-white mb-3">Add Your Team</h3>
+          <p class="text-kronara-text-secondary">Invite staff members with PIN-based login. They install the app on their phones and start logging immediately.</p>
+        </div>
+        <div class="text-center fade-in">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-kronara-copper to-kronara-copper-light flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-kronara-ink">3</div>
+          <h3 class="text-xl font-semibold text-white mb-3">Run Payroll</h3>
+          <p class="text-kronara-text-secondary">Review entries, process payroll with one click, and send professional PDF reports via email automatically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Security Section -->
   <section id="security" class="py-24 md:py-32 border-t border-kronara-ink-border relative">
@@ -1308,192 +1099,135 @@
   </section>
 
   <!-- Pricing Section -->
-  <section id="pricing" class="py-24 md:py-32 bg-kronara-ink-light/30 border-t border-kronara-ink-border relative">
+  <section id="pricing" class="py-24 md:py-32 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20 fade-in">
+
+      <!-- Section Header -->
+      <div class="text-center mb-16 fade-in">
         <p class="text-kronara-gold text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
         <h2 class="text-3xl md:text-5xl font-bold mb-6">
-          Simple, transparent <span class="gradient-text font-display">pricing</span>
+          One price.<br>
+          <span class="gradient-text font-display">The whole operating system.</span>
         </h2>
-        <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
-          Choose the plan that fits your studio. All plans include a one-time setup fee that covers deployment, configuration, custom branding, and onboarding support.
+        <p class="text-kronara-text-secondary text-lg max-w-3xl mx-auto">
+          No tiers to decode. No per-seat maths. No &ldquo;that&rsquo;s on the higher plan.&rdquo;
+          Every module below is switched on from day one, for every member of your team.
         </p>
       </div>
 
-      <!-- Pricing Toggle (Monthly/Annual) -->
-      <div class="flex items-center justify-center gap-4 mb-16 fade-in">
-        <span id="monthly-label" class="text-white font-medium">Monthly</span>
-        <button id="pricing-toggle" class="relative w-14 h-7 bg-kronara-ink-card border border-kronara-ink-border rounded-full transition-colors" data-annual="false">
-          <span id="toggle-dot" class="absolute top-0.5 left-0.5 w-6 h-6 bg-kronara-gold rounded-full transition-transform"></span>
-        </button>
-        <span id="annual-label" class="text-kronara-muted font-medium">Annual <span class="text-kronara-success text-xs font-semibold ml-1">Save 15%</span></span>
-      </div>
+      <div class="grid lg:grid-cols-3 gap-6 items-start">
 
-      <!-- Pricing Grid -->
-      <div class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-
-        <!-- Starter -->
-        <div class="bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in feature-card flex flex-col">
-          <div class="mb-8">
-            <h3 class="text-lg font-semibold text-kronara-gold mb-2">Starter</h3>
-            <p class="text-sm text-kronara-muted mb-6">For small studios just getting started</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-white pricing-monthly">$39</span>
-              <span class="text-4xl font-bold text-white pricing-annual hidden">$33</span>
-              <span class="text-kronara-muted">/month</span>
+        <!-- Main plan -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-kronara-gold/10 to-kronara-ink-light border border-kronara-gold/30 rounded-2xl p-8 md:p-10 fade-in">
+          <div class="flex flex-wrap items-end justify-between gap-6 mb-8">
+            <div>
+              <h3 class="text-2xl font-bold text-white mb-2">Kronara</h3>
+              <p class="text-kronara-text-secondary">Your studio&rsquo;s entire operating system.</p>
             </div>
-            <p class="text-sm text-kronara-muted mt-2">Up to <strong class="text-white">5 staff</strong></p>
+            <div class="text-right">
+              <div class="flex items-baseline gap-2 justify-end">
+                <span class="text-5xl md:text-6xl font-bold text-white">$129</span>
+                <span class="text-kronara-muted text-lg">CAD /month</span>
+              </div>
+              <p class="text-kronara-gold text-sm font-semibold mt-1">Unlimited staff &middot; First location included</p>
+            </div>
           </div>
-          <div class="border-t border-kronara-ink-border pt-6 mb-8">
-            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
-            <p class="text-2xl font-bold text-white">$199</p>
-            <p class="text-xs text-kronara-muted mt-1">Deployment, config & onboarding</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              All Kronara features
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Scheduling & shift swaps
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Payroll reports
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Notifications
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Mobile PWA install
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Email support
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-muted">
-              <svg class="w-5 h-5 text-kronara-muted/50 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Hosted at yourname.kronara.app
-            </li>
+
+          <div class="h-px bg-kronara-ink-border mb-8"></div>
+
+          <p class="text-xs font-bold uppercase tracking-widest text-kronara-muted mb-5">Everything, included</p>
+          <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Class booking &amp; schedule</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Events &amp; ticketing</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Memberships, passes &amp; credits</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Storefront &amp; inventory</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Gift cards &amp; store credit</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Parties &amp; private hire</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Room rentals &amp; subleases</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Newsletter &amp; subscriber lists</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Lead follow-up campaigns</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Promo codes &amp; staff leaderboard</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Sales &amp; revenue analytics</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Member community feed</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Member &amp; team messaging</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Timesheets &amp; commissions</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Payroll + QuickBooks Online</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Shift posting &amp; swaps</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Schedule requests</span></li>
+          <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-secondary text-sm">Compliance, contracts &amp; onboarding</span></li>
           </ul>
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist%20-%20Starter&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20for%20the%20Starter%20plan%20and%20secure%20my%20spot%20%2B%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0A%0AThanks%21" class="block text-center px-6 py-3 rounded-xl border border-kronara-ink-border text-kronara-text-secondary hover:border-kronara-gold hover:text-white transition-all font-medium">
-            Join Waitlist
+
+          <div class="h-px bg-kronara-ink-border mb-6"></div>
+
+          <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-8">
+            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">White-glove setup &mdash; no setup fee</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Unlimited staff, no per-seat charge</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Your own studio.kronara.app</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-kronara-text-primary text-sm font-semibold">Custom branding &amp; themes</span></li>
+          </ul>
+
+          <a href="#contact" class="block text-center px-8 py-4 rounded-xl bg-kronara-gold text-kronara-ink font-semibold text-lg hover:bg-kronara-gold-light transition-colors pulse-glow">
+            Join the Waitlist
           </a>
         </div>
 
-        <!-- Studio (Most Popular) -->
-        <div class="bg-kronara-ink-light border-2 border-kronara-gold rounded-2xl p-8 fade-in feature-card flex flex-col relative">
-          <div class="popular-badge">Most Popular</div>
-          <div class="mb-8">
-            <h3 class="text-lg font-semibold text-kronara-gold mb-2">Studio</h3>
-            <p class="text-sm text-kronara-muted mb-6">For growing studios with larger teams</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-white pricing-monthly">$79</span>
-              <span class="text-4xl font-bold text-white pricing-annual hidden">$67</span>
-              <span class="text-kronara-muted">/month</span>
-            </div>
-            <p class="text-sm text-kronara-muted mt-2">Up to <strong class="text-white">100 staff</strong></p>
-          </div>
-          <div class="border-t border-kronara-ink-border pt-6 mb-8">
-            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
-            <p class="text-2xl font-bold text-white">$399</p>
-            <p class="text-xs text-kronara-muted mt-1">Deployment, config, branding & training</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Everything in Starter
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Unlimited locations
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Calendar integrations
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Custom branding
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Priority support
-            </li>
-            <li class="flex items-start gap-2 text-sm text-white font-medium">
-              <svg class="w-5 h-5 text-kronara-copper flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              QuickBooks Online integration
-            </li>
-            <li class="flex items-start gap-2 text-sm text-white font-medium">
-              <svg class="w-5 h-5 text-kronara-copper flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Your own custom .app domain
-            </li>
-          </ul>
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist%20-%20Studio&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20for%20the%20Studio%20plan%20and%20secure%20my%20spot%20%2B%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0A%0AThanks%21" class="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-gold-light text-white font-semibold hover:opacity-90 transition-opacity">
-            Join Waitlist
-          </a>
-        </div>
+        <!-- Add-ons -->
+        <div class="space-y-6">
 
-        <!-- Enterprise -->
-        <div class="bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in feature-card flex flex-col">
-          <div class="mb-8">
-            <h3 class="text-lg font-semibold text-kronara-success mb-2">Enterprise</h3>
-            <p class="text-sm text-kronara-muted mb-6">For large organizations and franchises</p>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold text-white">Custom</span>
+          <div class="bg-kronara-ink-card border border-kronara-ink-border rounded-2xl p-8 fade-in">
+            <h3 class="text-lg font-semibold text-white mb-1">Additional locations</h3>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-3xl font-bold text-white">+$49</span>
+              <span class="text-kronara-muted text-sm">CAD /month each</span>
             </div>
-            <p class="text-sm text-kronara-muted mt-2"><strong class="text-white">100+ staff</strong></p>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed">
+              Your first location is included. Add sites as you grow &mdash; each one gets its own schedule,
+              staff and reporting, all under the same account.
+            </p>
           </div>
-          <div class="border-t border-kronara-ink-border pt-6 mb-8">
-            <p class="text-xs text-kronara-muted uppercase tracking-wider mb-3">One-time setup fee</p>
-            <p class="text-2xl font-bold text-white">$599+</p>
-            <p class="text-xs text-kronara-muted mt-1">Dedicated onboarding & data migration</p>
+
+          <div class="bg-kronara-ink-card border border-kronara-ink-border rounded-2xl p-8 fade-in">
+            <h3 class="text-lg font-semibold text-white mb-1">Education portal</h3>
+            <div class="flex items-baseline gap-2 mb-3">
+              <span class="text-2xl font-bold text-kronara-copper">Contact us</span>
+            </div>
+            <p class="text-kronara-text-secondary text-sm leading-relaxed mb-4">
+              The portal itself is included. This is for stocking it with <strong class="text-white">Kronara&rsquo;s own
+              manuals and video curriculum</strong> &mdash; a one-time access fee, then a monthly fee that keeps the
+              content current as we add to it.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-kronara-copper hover:text-kronara-copper-light transition-colors">
+              Ask about the curriculum
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
           </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Everything in Studio
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Unlimited staff
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Custom integrations
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              SLA support
-            </li>
-            <li class="flex items-start gap-2 text-sm text-kronara-text-secondary">
-              <svg class="w-5 h-5 text-kronara-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Data migration
-            </li>
-            <li class="flex items-start gap-2 text-sm text-white font-medium">
-              <svg class="w-5 h-5 text-kronara-copper flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              QuickBooks Online integration
-            </li>
-            <li class="flex items-start gap-2 text-sm text-white font-medium">
-              <svg class="w-5 h-5 text-kronara-copper flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              Your own custom .app domain
-            </li>
-          </ul>
-          <a href="#contact" class="block text-center px-6 py-3 rounded-xl border border-kronara-success text-kronara-success hover:bg-kronara-success hover:text-kronara-ink transition-all font-medium">
-            Contact Us
-          </a>
+
         </div>
       </div>
 
-      <!-- Pricing notes -->
-      <div class="mt-12 text-center fade-in">
-        <p class="text-sm text-kronara-muted max-w-2xl mx-auto">
-          All prices are in <strong class="text-white">CAD</strong>. All plans include every feature, hosting, automatic backups, SSL, and software updates. The one-time setup fee covers your dedicated instance deployment, initial configuration, and hands-on onboarding support. Need to scale up? Upgrade anytime with no data loss.
-        </p>
+      <!-- Setup banner -->
+      <div class="mt-8 bg-kronara-ink-light border border-kronara-ink-border rounded-2xl p-8 fade-in">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+          <div class="w-12 h-12 rounded-xl bg-kronara-gold/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-kronara-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">White-glove setup, included &mdash; no setup fee</h3>
+            <p class="text-kronara-text-secondary leading-relaxed">
+              We deploy your studio, configure it around how you actually work, apply your branding, migrate what
+              you already have and train your team. Most platforms bill this separately. We don&rsquo;t &mdash; the
+              $129 is the whole cost of running your studio on Kronara.
+            </p>
+          </div>
+        </div>
       </div>
+
+      <p class="text-center text-kronara-muted text-sm mt-8 fade-in">
+        All prices in Canadian dollars. Month to month &mdash; no lock-in contract.
+      </p>
+
     </div>
   </section>
 
@@ -1634,13 +1368,13 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
+          <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
             Join the Waitlist
           </a>
-          <a href="#demo" class="px-8 py-4 rounded-xl border border-kronara-ink-border text-kronara-text-secondary hover:border-kronara-gold hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
+          <a href="#screenshots" class="px-8 py-4 rounded-xl border border-kronara-ink-border text-kronara-text-secondary hover:border-kronara-gold hover:text-white transition-all inline-flex items-center justify-center gap-2 text-lg">
             Try the Demo
           </a>
         </div>
@@ -1682,8 +1416,8 @@
           <ul class="space-y-3">
             <li><a href="#features" class="text-sm text-kronara-muted hover:text-white transition-colors">Features</a></li>
             <li><a href="#pricing" class="text-sm text-kronara-muted hover:text-white transition-colors">Pricing</a></li>
-            <li><a href="#demo" class="text-sm text-kronara-muted hover:text-white transition-colors">Live Demo</a></li>
-            <li><a href="#screenshots" class="text-sm text-kronara-muted hover:text-white transition-colors">Screenshots</a></li>
+            <li></li>
+            <li><a href="#screenshots" class="text-sm text-kronara-muted hover:text-white transition-colors">See it</a></li>
           </ul>
         </div>
 
@@ -1752,7 +1486,7 @@
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20staff%3A%20%0APreferred%20plan%20(Starter%20%2F%20Studio%20%2F%20Enterprise)%3A%20%0A%0AThanks%21" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
+        <a href="mailto:admin@kronara.app?subject=Join%20the%20Kronara%20Waitlist&body=Hi%20Kronara%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20waitlist%20to%20secure%20my%20spot%20and%20the%2075%25%20off%20setup%20discount%20(code%3A%2020LAUNCH).%0A%0AStudio%20name%3A%20%0ANumber%20of%20locations%3A%20%0AInterested%20in%20the%20education%20portal%3F%20%0A%0AThanks%21" class="px-6 py-3 rounded-lg bg-gradient-to-r from-kronara-gold to-kronara-copper text-white font-semibold hover:opacity-90 transition-opacity">
           Join the Waitlist
         </a>
         <button id="promo-dismiss" class="px-6 py-3 rounded-lg border border-kronara-ink-border text-kronara-text-secondary hover:text-white hover:border-kronara-gold/50 transition-all">
@@ -1838,32 +1572,6 @@
       }
     });
 
-    // Pricing toggle
-    const pricingToggle = document.getElementById('pricing-toggle');
-    const toggleDot = document.getElementById('toggle-dot');
-    const monthlyLabel = document.getElementById('monthly-label');
-    const annualLabel = document.getElementById('annual-label');
-    const monthlyPrices = document.querySelectorAll('.pricing-monthly');
-    const annualPrices = document.querySelectorAll('.pricing-annual');
-
-    pricingToggle.addEventListener('click', () => {
-      const isAnnual = pricingToggle.dataset.annual === 'true';
-      pricingToggle.dataset.annual = !isAnnual;
-
-      if (!isAnnual) {
-        toggleDot.style.transform = 'translateX(28px)';
-        monthlyLabel.classList.replace('text-white', 'text-kronara-muted');
-        annualLabel.classList.replace('text-kronara-muted', 'text-white');
-        monthlyPrices.forEach(el => el.classList.add('hidden'));
-        annualPrices.forEach(el => el.classList.remove('hidden'));
-      } else {
-        toggleDot.style.transform = 'translateX(0)';
-        monthlyLabel.classList.replace('text-kronara-muted', 'text-white');
-        annualLabel.classList.replace('text-white', 'text-kronara-muted');
-        monthlyPrices.forEach(el => el.classList.remove('hidden'));
-        annualPrices.forEach(el => el.classList.add('hidden'));
-      }
-    });
 
     // FAQ accordion
     document.querySelectorAll('.faq-toggle').forEach(toggle => {
