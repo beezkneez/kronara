@@ -49,10 +49,17 @@ not inline.
 
 | Folder | Repo | What it is |
 |---|---|---|
-| `C:\dev\kronara-website` | `beezkneez/kronara` | **This** — the marketing site at kronara.app |
-| `C:\dev\kronara` | `beezkneez/kronara-build` | The **app** (Node/Express + Postgres, deployed on Railway) |
-| `C:\dev\kronara-admin` | `beezkneez/kronara-admin` | Tenant provisioning / admin tooling |
+| `C:\dev\kronara-website` | `beezkneez/kronara` | **This** — the Kronara company site at kronara.app |
+| `C:\dev\aradia-time` | `beezkneez/aradia-time` | **The studio app.** Every tenant Railway service is deployed from this repo — `kronara-admin` sets `GITHUB_REPO=beezkneez/aradia-time`. ~200 tables. |
+| `C:\dev\kronara-admin` | `beezkneez/kronara-admin` | Tenant provisioning — spins up Railway services from `aradia-time` |
+| `C:\dev\kronara` | `beezkneez/kronara-build` | An earlier, much smaller build. Tenants are **not** deployed from it. |
 | `C:\dev\kronara-mobile` | — | Capacitor mobile shell |
+
+### Scope of the charcoal-and-gold rebrand
+
+The rebrand is **Kronara the company** — this site. It is deliberately *not*
+applied to `aradia-time`, the app studios actually use: tenants carry their
+own branding, and Aradia's is its own.
 
 ## Deploying
 
