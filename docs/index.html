@@ -161,6 +161,29 @@
       color: #140F06;
     }
 
+    /* Ambient hero: aurora + slow drift + a ring that echoes the K mark */
+    .aurora-wash {
+      background:
+        radial-gradient(60% 50% at 18% 22%, rgba(217,174,104,0.16) 0%, transparent 60%),
+        radial-gradient(50% 40% at 82% 12%, rgba(193,127,51,0.12) 0%, transparent 60%),
+        radial-gradient(70% 60% at 50% 100%, rgba(217,174,104,0.10) 0%, transparent 55%);
+      animation: aurora-drift 24s ease-in-out infinite alternate;
+    }
+    @keyframes aurora-drift {
+      0%   { transform: translate3d(0,0,0) scale(1); opacity: .85; }
+      100% { transform: translate3d(-2%,1.5%,0) scale(1.06); opacity: 1; }
+    }
+    .spin-slow  { animation: spin-slow 200s linear infinite; transform-origin: center; }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    .ring-tick { position:absolute; top:50%; left:50%; width:1px; height:100%; transform-origin: top center; }
+    .ring-tick i {
+      display:block; width:1px; height:14px; background: rgba(217,174,104,0.30); margin: 0 auto;
+    }
+    .ring-tick.major i { height:26px; background: rgba(217,174,104,0.50); width:2px; }
+    @media (prefers-reduced-motion: reduce) {
+      .aurora-wash, .spin-slow { animation: none; }
+    }
+
     /* Feature accordions */
     summary { list-style: none; }
     summary::-webkit-details-marker { display: none; }
@@ -184,16 +207,16 @@
     /* Hero background pattern */
     .hero-bg {
       background-image:
-        radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(232, 131, 42, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 50% 100%, rgba(108, 92, 231, 0.1) 0%, transparent 40%);
+        radial-gradient(circle at 20% 50%, rgba(217, 174, 104, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(193, 127, 51, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(217, 174, 104, 0.10) 0%, transparent 40%);
     }
 
     /* Grid pattern overlay */
     .grid-pattern {
       background-image:
-        linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(217, 174, 104, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(217, 174, 104, 0.035) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -284,6 +307,29 @@
 
   <!-- Hero Section -->
   <section class="hero-bg grid-pattern min-h-screen flex items-center pt-20 relative overflow-hidden">
+    <!-- Ambient background -->
+    <div aria-hidden="true" class="absolute inset-0 aurora-wash pointer-events-none"></div>
+    <div aria-hidden="true" class="hidden lg:block absolute -right-[16%] -top-[14%] w-[1000px] h-[1000px] pointer-events-none opacity-[0.45]">
+      <div class="absolute inset-0 rounded-full border border-kronara-gold/15"></div>
+      <div class="absolute inset-[7%] rounded-full border border-kronara-gold/10"></div>
+      <div class="absolute inset-[16%] rounded-full border border-kronara-gold/[0.07]"></div>
+      <div class="absolute inset-0 spin-slow">
+        <div class="ring-tick major" style="transform: translate(-50%,-50%) rotate(0deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(30deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(60deg)"><i></i></div>
+        <div class="ring-tick major" style="transform: translate(-50%,-50%) rotate(90deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(120deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(150deg)"><i></i></div>
+        <div class="ring-tick major" style="transform: translate(-50%,-50%) rotate(180deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(210deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(240deg)"><i></i></div>
+        <div class="ring-tick major" style="transform: translate(-50%,-50%) rotate(270deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(300deg)"><i></i></div>
+        <div class="ring-tick" style="transform: translate(-50%,-50%) rotate(330deg)"><i></i></div>
+      </div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-kronara-gold/70"></div>
+    </div>
+
     <!-- Decorative orbs -->
     <div class="absolute top-1/4 left-10 w-72 h-72 bg-kronara-gold/10 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-kronara-copper/10 rounded-full blur-3xl animate-float-delay"></div>
@@ -905,7 +951,8 @@
           Try it <span class="gradient-text font-display">right now</span>
         </h2>
         <p class="text-kronara-text-secondary text-lg max-w-2xl mx-auto">
-          No signup needed. Jump into a live demo as either a staff member or an admin to see exactly how Kronara works.
+          Tell us a little about your studio and we&rsquo;ll send you a login, usually the same day.
+          It takes a minute &mdash; and it means we can point you at the parts that actually matter to you.
         </p>
       </div>
 
@@ -921,15 +968,10 @@
           <p class="text-kronara-text-secondary mb-6">
             Experience Kronara as a staff member. Log hours, track commissions, view your pay history, and more.
           </p>
-          <div class="inline-flex flex-col gap-1 px-5 py-3 mb-8 rounded-lg bg-kronara-ink-border/40 border border-kronara-ink-border text-sm">
-            <span class="text-xs uppercase tracking-widest text-kronara-gold font-semibold mb-1">Demo Login</span>
-            <span class="text-kronara-text-secondary">Username: <span class="text-white font-mono font-semibold">staff</span></span>
-            <span class="text-kronara-text-secondary">Password: <span class="text-white font-mono font-semibold">1234abcd</span></span>
-          </div>
-          <a href="https://demo.kronara.app" target="_blank" id="demo-staff-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-gold text-kronara-ink font-semibold text-lg hover:bg-kronara-gold-light transition-colors pulse-glow">
-            Launch Staff Demo
+          <a href="mailto:admin@kronara.app?subject=Demo%20Access%20Request%3A%20Staff&body=Studio%20name%3A%20%0AYour%20name%3A%20%0ANumber%20of%20locations%3A%20%0APhone%20(optional)%3A%20%0A%0AI%27d%20like%20access%20to%20the%20staff%20demo.%0A%0AThanks%21" id="demo-staff-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-gold-light text-kronara-ink font-bold text-lg hover:bg-kronara-gold transition-colors">
+            Request Staff Access
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </a>
         </div>
@@ -946,22 +988,17 @@
           <p class="text-kronara-text-secondary mb-6">
             See the full admin experience. Manage staff, process payroll, review flags, and configure your studio.
           </p>
-          <div class="inline-flex flex-col gap-1 px-5 py-3 mb-8 rounded-lg bg-kronara-ink-border/40 border border-kronara-ink-border text-sm">
-            <span class="text-xs uppercase tracking-widest text-kronara-copper font-semibold mb-1">Demo Login</span>
-            <span class="text-kronara-text-secondary">Username: <span class="text-white font-mono font-semibold">testadmin</span></span>
-            <span class="text-kronara-text-secondary">Password: <span class="text-white font-mono font-semibold">1234abcd</span></span>
-          </div>
-          <a href="https://demo.kronara.app" target="_blank" id="demo-admin-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-kronara-copper text-kronara-ink font-semibold text-lg hover:bg-kronara-copper-light transition-colors glow-copper">
-            Launch Admin Demo
+          <a href="mailto:admin@kronara.app?subject=Demo%20Access%20Request%3A%20Admin&body=Studio%20name%3A%20%0AYour%20name%3A%20%0ANumber%20of%20locations%3A%20%0APhone%20(optional)%3A%20%0A%0AI%27d%20like%20access%20to%20the%20admin%20demo.%0A%0AThanks%21" id="demo-admin-btn" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-kronara-gold text-kronara-gold font-bold text-lg hover:bg-kronara-gold hover:text-kronara-ink transition-colors">
+            Request Admin Access
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </a>
         </div>
       </div>
 
       <p class="text-center text-sm text-kronara-muted mt-8">
-        Demo uses sample data. Your entries are reset periodically. No personal data is collected.
+        The demo runs on sample data and resets periodically. We&rsquo;ll send credentials to the email you write from.
       </p>
     </div>
   </section>
