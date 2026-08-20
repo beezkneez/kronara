@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Kronara — Let's Get You Set Up</title>
   <meta name="description" content="Complete your Kronara setup by telling us about your studio.">
-  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <meta name="theme-color" content="#070A0F">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +18,21 @@
         extend: {
           colors: {
             kronara: {
-              purple: '#6C5CE7',
-              'purple-light': '#8B7CF0',
-              'purple-dark': '#5A4BD6',
-              orange: '#E8832A',
-              'orange-light': '#F09A4A',
-              'orange-dark': '#D06F1A',
-              navy: '#0A0A1A',
-              'navy-light': '#141428',
-              'navy-card': '#1a1a32',
-              'navy-border': '#252540',
-              teal: '#7ac4a0',
-              muted: '#8a8ea0',
-              'text-primary': '#e8eaf0',
-              'text-secondary': '#b0b4c4',
+              gold: '#D9AE68',
+              'gold-light': '#F2E0AE',
+              'gold-dark': '#B8914A',
+              copper: '#C17F33',
+              'copper-light': '#D9974A',
+              'copper-dark': '#9A6B24',
+              ink: '#070A0F',
+              'ink-header': '#05070B',
+              'ink-light': '#0E141C',
+              'ink-card': '#131B24',
+              'ink-border': '#263241',
+              success: '#6FBF8E',
+              muted: '#8792A2',
+              'text-primary': '#E9EDF3',
+              'text-secondary': '#AEB8C6',
             }
           },
           fontFamily: {
@@ -44,25 +47,25 @@
     body { font-family: 'Montserrat', sans-serif; }
     .font-display { font-family: 'Playfair Display', serif; }
     .gradient-text {
-      background: linear-gradient(135deg, #6C5CE7, #E8832A);
+      background: linear-gradient(135deg, #F2E0AE, #C17F33);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .glow-purple { box-shadow: 0 0 40px rgba(108, 92, 231, 0.3); }
+    .glow-gold { box-shadow: 0 0 40px rgba(217, 174, 104, 0.3); }
     .toggle-btn { transition: all 0.2s; }
-    .toggle-btn.active { background: #6C5CE7; border-color: #6C5CE7; color: #fff; }
-    .toggle-btn:not(.active) { background: #1a1a32; border-color: #252540; color: #8a8ea0; }
-    .toggle-btn:not(.active):hover { border-color: #6C5CE7; color: #b0b4c4; }
+    .toggle-btn.active { background: #D9AE68; border-color: #D9AE68; color: #140F06; }
+    .toggle-btn:not(.active) { background: #131B24; border-color: #263241; color: #8792A2; }
+    .toggle-btn:not(.active):hover { border-color: #D9AE68; color: #AEB8C6; }
   </style>
 </head>
-<body class="bg-kronara-navy text-kronara-text-primary min-h-screen">
+<body class="bg-kronara-ink text-kronara-text-primary min-h-screen">
 
   <!-- Header -->
-  <nav class="fixed top-0 w-full z-40 bg-kronara-navy/90 backdrop-blur-md border-b border-kronara-navy-border">
+  <nav class="fixed top-0 w-full z-40 bg-kronara-ink/90 backdrop-blur-md border-b border-kronara-ink-border">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center">
       <a href="/" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Kronara" class="h-8 w-8">
+        <img src="assets/images/square-logo.png" alt="Kronara" class="h-8 w-8 rounded-md">
         <span class="text-xl font-bold text-white tracking-tight">Kronara</span>
       </a>
     </div>
@@ -74,8 +77,8 @@
 
       <!-- Success Message (hidden by default, shown after submit) -->
       <div id="success-message" class="hidden text-center">
-        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-kronara-teal/20 flex items-center justify-center">
-          <svg class="w-10 h-10 text-kronara-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-kronara-success/20 flex items-center justify-center">
+          <svg class="w-10 h-10 text-kronara-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
         </div>
@@ -83,7 +86,7 @@
         <p class="text-kronara-text-secondary text-lg mb-8">
           Thank you for choosing Kronara. We've received your details and will have your studio set up within 24 hours. Keep an eye on your inbox for next steps.
         </p>
-        <a href="/" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold hover:opacity-90 transition-opacity">
+        <a href="/" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-gold-light text-white font-semibold hover:opacity-90 transition-opacity">
           Back to Kronara
         </a>
       </div>
@@ -101,25 +104,25 @@
 
           <!-- Business Name -->
           <div>
-            <label for="business-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Business / Studio Name <span class="text-kronara-orange">*</span></label>
+            <label for="business-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Business / Studio Name <span class="text-kronara-copper">*</span></label>
             <input type="text" id="business-name" name="businessName" required
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
               placeholder="e.g. Studio Inc">
           </div>
 
           <!-- Owner Name -->
           <div>
-            <label for="owner-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Owner / Contact Name <span class="text-kronara-orange">*</span></label>
+            <label for="owner-name" class="block text-sm font-medium text-kronara-text-secondary mb-2">Owner / Contact Name <span class="text-kronara-copper">*</span></label>
             <input type="text" id="owner-name" name="ownerName" required
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
               placeholder="e.g. First Last">
           </div>
 
           <!-- Email -->
           <div>
-            <label for="email" class="block text-sm font-medium text-kronara-text-secondary mb-2">Email <span class="text-kronara-orange">*</span></label>
+            <label for="email" class="block text-sm font-medium text-kronara-text-secondary mb-2">Email <span class="text-kronara-copper">*</span></label>
             <input type="email" id="email" name="email" required
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
               placeholder="you@yourstudio.com">
           </div>
 
@@ -127,7 +130,7 @@
           <div>
             <label for="phone" class="block text-sm font-medium text-kronara-text-secondary mb-2">Phone</label>
             <input type="tel" id="phone" name="phone"
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
               placeholder="+1 (555) 000-0000">
           </div>
 
@@ -135,35 +138,35 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Number of Staff -->
             <div>
-              <label for="num-staff" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Staff <span class="text-kronara-orange">*</span></label>
+              <label for="num-staff" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Staff <span class="text-kronara-copper">*</span></label>
               <input type="number" id="num-staff" name="numStaff" required min="1"
-                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
                 placeholder="e.g. 8">
             </div>
 
             <!-- Number of Locations -->
             <div>
-              <label for="num-locations" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Locations <span class="text-kronara-orange">*</span></label>
+              <label for="num-locations" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Locations <span class="text-kronara-copper">*</span></label>
               <input type="number" id="num-locations" name="numLocations" required min="1" value="1"
-                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors">
+                class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors">
             </div>
           </div>
 
           <!-- Dynamic Location Names -->
           <div id="location-names" class="space-y-3">
-            <label class="block text-sm font-medium text-kronara-text-secondary mb-2">Location Name(s) <span class="text-kronara-orange">*</span></label>
+            <label class="block text-sm font-medium text-kronara-text-secondary mb-2">Location Name(s) <span class="text-kronara-copper">*</span></label>
             <div id="location-inputs">
               <input type="text" name="location-1" required
-                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
                 placeholder="Location 1 name">
             </div>
           </div>
 
           <!-- Number of Admin Staff to Train -->
           <div>
-            <label for="num-admins" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Admin Staff to Train <span class="text-kronara-orange">*</span></label>
+            <label for="num-admins" class="block text-sm font-medium text-kronara-text-secondary mb-2">Number of Admin Staff to Train <span class="text-kronara-copper">*</span></label>
             <input type="number" id="num-admins" name="numAdmins" required min="1"
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
               placeholder="e.g. 2">
           </div>
 
@@ -173,14 +176,14 @@
             <!-- Subdomain (Starter: 1-5 staff) -->
             <div id="domain-subdomain" class="flex items-center gap-2">
               <input type="text" id="domain-name" name="domainName"
-                class="flex-1 px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                class="flex-1 px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
                 placeholder="yourstudio">
               <span class="text-kronara-muted text-sm whitespace-nowrap">.kronara.app</span>
             </div>
             <!-- Custom domain (Studio/Enterprise: 6+ staff) -->
             <div id="domain-custom" class="hidden">
               <input type="text" id="domain-name-custom" name="domainNameCustom"
-                class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors"
+                class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors"
                 placeholder="e.g. app.yourstudio.app">
             </div>
             <p id="domain-hint" class="text-kronara-muted text-xs mt-1">Your team will access the app at this address</p>
@@ -205,14 +208,14 @@
           <div>
             <label for="start-date" class="block text-sm font-medium text-kronara-text-secondary mb-2">Preferred Start Date</label>
             <input type="date" id="start-date" name="startDate"
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors">
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors">
           </div>
 
           <!-- How did you hear about us -->
           <div>
             <label for="referral" class="block text-sm font-medium text-kronara-text-secondary mb-2">How did you hear about us?</label>
             <select id="referral" name="referral"
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white focus:outline-none focus:border-kronara-purple transition-colors">
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white focus:outline-none focus:border-kronara-gold transition-colors">
               <option value="" class="text-kronara-muted">Select one...</option>
               <option value="google">Google Search</option>
               <option value="social">Social Media</option>
@@ -226,7 +229,7 @@
           <div>
             <label for="special-requests" class="block text-sm font-medium text-kronara-text-secondary mb-2">Special Requests</label>
             <textarea id="special-requests" name="specialRequests" rows="4"
-              class="w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors resize-none"
+              class="w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors resize-none"
               placeholder="Any specific requirements, integrations, or things we should know..."></textarea>
           </div>
 
@@ -235,7 +238,7 @@
 
           <!-- Submit -->
           <button type="submit" id="submit-btn"
-            class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-purple to-kronara-purple-light text-white font-semibold text-lg hover:opacity-90 transition-opacity glow-purple">
+            class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-kronara-gold to-kronara-gold-light text-white font-semibold text-lg hover:opacity-90 transition-opacity glow-gold">
             Submit & Get Started
           </button>
 
@@ -286,7 +289,7 @@
         input.required = true;
         input.placeholder = count === 1 ? 'Location name' : `Location ${i + 1} name`;
         input.value = values[i] || '';
-        input.className = 'w-full px-4 py-3 rounded-xl bg-kronara-navy-card border border-kronara-navy-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-purple transition-colors';
+        input.className = 'w-full px-4 py-3 rounded-xl bg-kronara-ink-card border border-kronara-ink-border text-white placeholder-kronara-muted focus:outline-none focus:border-kronara-gold transition-colors';
         if (i > 0) input.style.marginTop = '0.75rem';
         locationInputs.appendChild(input);
       }
