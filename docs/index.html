@@ -605,12 +605,17 @@
 
   <!--
     Savings & Comparison Section
-    The "Studio management software" and "Newsletter" rows use a real
-    reported example (a four-location studio paying ~$850/mo for booking
-    software + ~$120/mo for a newsletter tool; the same four locations on
-    Kronara = $129 base + $49/mo x 3 extra locations = $276, quoted as $279).
-    The remaining rows are still illustrative placeholders, not confirmed
-    numbers. Before this section is treated as fully final, confirm:
+    The "Studio management software" and "Newsletter" rows, and the
+    "Savings by studio size" cards, use real reported ranges:
+      - Newsletter/email tool: $50-120+/mo depending on list size
+      - Studio management software: $125/mo (one location) up to $850/mo
+        (four locations)
+      - Kronara: $129/mo base (one location), +$49/mo per additional
+        location -> $276/mo for four locations, quoted/rounded as $279
+    The remaining rows (admin time, hosting, domain, Eventbrite fee) are
+    still illustrative placeholders, not confirmed numbers, and are NOT
+    scaled by location count. Before this section is treated as fully
+    final, confirm:
       1. Admin hours saved/week and the hourly rate used to price them
       2. Real website hosting cost being displaced
       3. Real domain registration/renewal + update fee cost
@@ -659,8 +664,11 @@
                 <td class="px-5 py-4 text-kronara-gold font-semibold align-top">Included</td>
               </tr>
               <tr>
-                <td class="px-5 py-4 text-kronara-text-primary font-medium align-top">Newsletter &amp; email marketing</td>
-                <td class="px-5 py-4 text-kronara-text-secondary align-top">&asymp; $120/mo</td>
+                <td class="px-5 py-4 text-kronara-text-primary font-medium align-top">
+                  Newsletter &amp; email marketing
+                  <span class="block text-kronara-muted text-xs font-normal mt-1">Depends on list size</span>
+                </td>
+                <td class="px-5 py-4 text-kronara-text-secondary align-top">$50&ndash;120+/mo</td>
                 <td class="px-5 py-4 text-kronara-gold font-semibold align-top">Included</td>
               </tr>
               <tr>
@@ -674,22 +682,54 @@
               <tr>
                 <td class="px-5 py-4 text-kronara-text-primary font-medium align-top">
                   Studio management software
-                  <span class="block text-kronara-muted text-xs font-normal mt-1">A four-location studio, booking + marketing + payroll separately</span>
+                  <span class="block text-kronara-muted text-xs font-normal mt-1">Booking + marketing + payroll, separately</span>
                 </td>
-                <td class="px-5 py-4 text-kronara-text-secondary align-top">&asymp; $850/mo</td>
-                <td class="px-5 py-4 text-kronara-gold font-semibold align-top">$279/mo <span class="text-kronara-muted text-xs font-normal">(4 locations)</span></td>
+                <td class="px-5 py-4 text-kronara-text-secondary align-top">$125&ndash;850/mo <span class="text-kronara-muted text-xs">(1 to 4 locations)</span></td>
+                <td class="px-5 py-4 text-kronara-gold font-semibold align-top">$129&ndash;279/mo <span class="text-kronara-muted text-xs font-normal">(1 to 4 locations)</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <div class="bg-gradient-to-br from-kronara-gold/10 to-kronara-ink-light border border-kronara-gold/30 rounded-2xl p-8 md:p-10 fade-in text-center mb-20">
-        <p class="text-lg md:text-xl text-kronara-text-primary leading-relaxed max-w-3xl mx-auto">
-          Add it up and a four-location studio can be looking at roughly <span class="text-kronara-gold font-bold">$2,300+ a month</span> in separate tools and admin time &mdash; against <span class="text-kronara-gold font-bold">$279</span> on Kronara. That&rsquo;s more than <span class="text-kronara-gold font-bold">$24,000 a year</span> back in the business.
-        </p>
-        <p class="text-kronara-muted text-xs mt-4">Software and newsletter figures reflect a real four-location comparison; the rest are illustrative estimates, not a quote for your studio &mdash; <a href="#demo-request" class="text-kronara-gold hover:underline">ask us to run your actual numbers</a>.</p>
+      <div class="text-center mb-6 fade-in">
+        <h3 class="text-xl md:text-2xl font-bold text-white">Savings by studio size</h3>
+        <p class="text-kronara-muted text-sm mt-2">Software + newsletter alone &mdash; before admin time, hosting or domain fees, which are itemized above.</p>
       </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 mb-6 fade-in">
+        <div class="bg-kronara-ink-card border border-kronara-ink-border rounded-2xl p-8 text-center">
+          <p class="text-kronara-gold text-xs font-bold uppercase tracking-widest mb-6">One location</p>
+          <div class="flex justify-center gap-8 mb-6">
+            <div>
+              <p class="text-kronara-muted text-xs mb-1">Typical stack</p>
+              <p class="text-lg font-semibold text-white">$175/mo</p>
+            </div>
+            <div>
+              <p class="text-kronara-muted text-xs mb-1">With Kronara</p>
+              <p class="text-lg font-semibold text-kronara-gold">$129/mo</p>
+            </div>
+          </div>
+          <p class="text-3xl md:text-4xl font-bold text-kronara-gold">$552<span class="text-base font-normal text-kronara-muted">/yr saved</span></p>
+        </div>
+
+        <div class="bg-kronara-ink-card border border-kronara-gold/30 rounded-2xl p-8 text-center">
+          <p class="text-kronara-gold text-xs font-bold uppercase tracking-widest mb-6">Four locations</p>
+          <div class="flex justify-center gap-8 mb-6">
+            <div>
+              <p class="text-kronara-muted text-xs mb-1">Typical stack</p>
+              <p class="text-lg font-semibold text-white">$970/mo</p>
+            </div>
+            <div>
+              <p class="text-kronara-muted text-xs mb-1">With Kronara</p>
+              <p class="text-lg font-semibold text-kronara-gold">$279/mo</p>
+            </div>
+          </div>
+          <p class="text-3xl md:text-4xl font-bold text-kronara-gold">$8,292<span class="text-base font-normal text-kronara-muted">/yr saved</span></p>
+        </div>
+      </div>
+
+      <p class="text-center text-kronara-muted text-xs mb-20 fade-in">Based on a $50&ndash;120+/mo newsletter and $125&ndash;850/mo software range across studio sizes &mdash; <a href="#demo-request" class="text-kronara-gold hover:underline">ask us to run your actual numbers</a>.</p>
 
       <div class="text-center mb-12 fade-in">
         <h3 class="text-2xl md:text-3xl font-bold mb-4">
